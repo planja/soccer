@@ -3,5 +3,5 @@ target
 .classpath
 .project
 .settings
-.idea
+.idea/
 *.iml
