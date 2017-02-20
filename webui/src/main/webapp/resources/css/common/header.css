@@ -1,0 +1,73 @@
+#header {
+    width: 100%;
+}
+
+#header a {
+    text-decoration: none;
+}
+
+#header .header-image {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#header #menu {
+    background: url(/resources/images/common/bg_logomenu.png) repeat-x scroll 0 0;
+    overflow: hidden;
+}
+
+#menu ul li {
+    background: url(/resources/images/common/bg_main_menu_li.png) no-repeat scroll right 0;
+    float: left;
+    list-style: outside none none;
+}
+
+#menu ul li.first {
+    margin-left: -40px;
+}
+
+#menu ul li a {
+    color: #ffffff;
+    font: bold 16px/44px Arial;
+    padding: 0 17px 0 13px;
+    display: block;
+}
+
+#menu ul li a:hover {
+    text-decoration: underline;
+}
+
+#menu div.left-block {
+    background: url(/resources/images/common/bg_user_bl1.png) no-repeat scroll 0 0;
+    color: #fff;
+    float: right;
+    height: 45px;
+    padding: 0 10px 0 17px;
+    width: 220px;
+    margin-top: -10px;
+}
+
+#menu div.left-block div.content {
+    margin-left: 55px;
+}
+
+#menu div.left-block div.content span.login-icon {
+    display: block;
+    float: left;
+    background: url(/resources/images/common/background1.png) no-repeat scroll -52px -25px;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+#menu div.left-block div.content a.login {
+    display: block;
+    color: #ffffff;
+    margin-top: 11px;
+    width: 65px;
+}
+
+#menu div.left-block div.content a:hover {
+    text-decoration: underline;
+}
