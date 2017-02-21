@@ -4,3 +4,58 @@ body {
     background-color: rgb(240, 240, 240);
     margin: 0 auto;
 }
+
+#left-news {
+    background-color: #ffffff;
+    min-height: 140px;
+    width: 240px;
+    margin: 20px 0 0 0;
+}
+
+#left-news div.title {
+    background: #4da23f;
+    color: #fff;
+    font: bold 16px/44px Arial;
+    padding: 0 5px 0 15px;
+    text-transform: uppercase;
+    height: 44px;
+}
+
+#left-news div span span.block-title-icon {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -50px 0;
+    display: block;
+    float: left;
+    height: 22px;
+    margin: 11px 16px 0 0;
+    width: 22px;
+}
+
+#left-bottom-news{
+    background-color: #ffffff;
+    min-height: 640px;
+    width: 240px;
+    margin: 20px 0 20px 0;
+}
+
+#left-bottom-news div.title{
+    background: #4da23f;
+    color: #fff;
+    font: bold 16px/44px Arial;
+    padding: 0 5px 0 15px;
+    text-transform: uppercase;
+    height: 44px;
+}
+
+#left-bottom-news div span span.block-title-icon {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -72px 0;
+    display: block;
+    float: left;
+    height: 25px;
+    margin: 10px 13px 0 0;
+    width: 25px;
+}
+
+#center {
+    background-color: #ffffff;
+    padding: 15px;
+}
