@@ -1,18 +1,22 @@
 body {
-    min-width: 1050px;
-    max-width: 1280px;
+    width: 1280px;
     background-color: rgb(240, 240, 240);
     margin: 0 auto;
 }
 
 #left-news {
+    float: left;
+}
+
+#left-top-news {
+    display: inline-block;
     background-color: #ffffff;
     min-height: 140px;
     width: 240px;
     margin: 20px 0 0 0;
 }
 
-#left-news div.title {
+#left-top-news div.title {
     background: #4da23f;
     color: #fff;
     font: bold 16px/44px Arial;
@@ -21,7 +25,7 @@ body {
     height: 44px;
 }
 
-#left-news div span span.block-title-icon {
+#left-top-news div span span.block-title-icon {
     background: url(/resources/images/common/background1.png) no-repeat scroll -50px 0;
     display: block;
     float: left;
@@ -30,14 +34,14 @@ body {
     width: 22px;
 }
 
-#left-bottom-news{
+#left-bottom-news {
     background-color: #ffffff;
     min-height: 640px;
     width: 240px;
     margin: 20px 0 20px 0;
 }
 
-#left-bottom-news div.title{
+#left-bottom-news div.title {
     background: #4da23f;
     color: #fff;
     font: bold 16px/44px Arial;
@@ -59,3 +63,143 @@ body {
     background-color: #ffffff;
     padding: 15px;
 }
+
+#middle-news {
+    float: left;
+    margin: 20px 0 0 20px;
+    display: inline-block;
+    background-color: #ffffff;
+    width: 502px;
+    min-height: 640px;
+}
+
+#matches-result {
+    float: left;
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    background-color: #ffffff;
+    width: 303px;
+    min-height: 640px;
+}
+
+#matches-result div.title {
+    background: #4da23f;
+    color: #fff;
+    font: bold 16px/44px Arial;
+    padding: 0 5px 0 15px;
+    text-transform: uppercase;
+    height: 44px;
+}
+
+#matches-result div span span.block-title-icon {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -22px 0;
+    display: block;
+    float: left;
+    height: 18px;
+    margin: 13px 10px 0 0;
+    width: 28px;
+}
+
+#tournaments {
+    float: left;
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    background-color: #ffffff;
+    width: 175px;
+    min-height: 253px;
+}
+
+#tournaments div.title {
+    background: #4da23f;
+    color: #fff;
+    font: bold 16px/44px Arial;
+    padding: 0 5px 0 15px;
+    text-transform: uppercase;
+    height: 44px;
+}
+
+#tournaments div span span.block-title-icon {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -22px -25px;
+    display: block;
+    float: left;
+    height: 26px;
+    margin: 10px 10px 0 0;
+    width: 28px;
+}
+
+#tournaments ul.menu {
+    padding: 10px 0 0 10px;
+}
+
+#tournaments ul li {
+    list-style: outside none none;
+}
+
+#tournaments ul li div.menu-item {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#tournaments ul li div.menu-item:hover {
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -177px;
+    height: 21px;
+}
+
+#tournaments ul li div div.content{
+    margin-left: 10px;
+}
+
+#tournaments ul li ul li {
+    color: #4da23f;
+    cursor: pointer;
+}
+
+#tournaments ul li ul li:hover{
+    text-decoration: underline;
+}
+
+#tournaments ul li span.icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+#tournaments ul li span.germany {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 0;
+}
+
+#tournaments ul li span.russia {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -16px;
+}
+
+#tournaments ul li span.lc {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -32px;
+}
+
+#tournaments ul li span.le {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -48px;
+}
+
+#tournaments ul li span.england {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -64px;
+}
+
+#tournaments ul li span.spain {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -80px;
+}
+
+#tournaments ul li span.italy {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -96px;
+}
+
+#tournaments ul li span.ukraine {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -112px;
+}
+
+#tournaments ul li span.france {
+    background: url(/resources/images/common/icons.png) no-repeat scroll 0 -128px;
+}
+
+
+
+

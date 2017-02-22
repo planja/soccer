@@ -16,17 +16,22 @@
     <title>Футбол, новости российского, европейского и мирового футбола</title>
 </t:header>
 
+
 <div id="left-news">
-    <div class="title">
-        <span><span class="block-title-icon">&nbsp;</span>Главные новости</span>
-    </div>
+    <t:left-top-news>
+    </t:left-top-news>
+    <t:left-bottom-news>
+    </t:left-bottom-news>
 </div>
 
-<div id="left-bottom-news">
-    <div class="title">
-        <span><span class="block-title-icon">&nbsp;</span>Новости футбола</span>
-    </div>
+<div id="middle-news">
 </div>
+
+<t:matches-result>
+</t:matches-result>
+
+<t:tournaments>
+</t:tournaments>
 
 <t:footer>
 </t:footer>

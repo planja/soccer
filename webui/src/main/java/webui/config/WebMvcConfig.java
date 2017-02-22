@@ -27,6 +27,14 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     private static final Charset UTF8 = Charset.forName("UTF-8");
 
+    @Controller
+    static class FaviconController {
+        @RequestMapping("favicon.ico")
+        String favicon() {
+            return "forward:/resources/images/favicon.ico";
+        }
+    }
+
     // Config UTF-8 Encoding.
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
