@@ -101,7 +101,7 @@ body {
 }
 
 #tournaments {
-    float: left;
+    float: right;
     display: inline-block;
     margin: 20px 0 0 20px;
     background-color: #ffffff;
@@ -145,7 +145,7 @@ body {
     height: 21px;
 }
 
-#tournaments ul li div div.content{
+#tournaments ul li div div.login-content{
     margin-left: 10px;
 }
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/common/body.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/common/header.css" />">
     <script src="<c:url value="/resources/js/common/jquery-1.9.1.min.js" />"></script>
+    <script src="<c:url value="/resources/js/common/angularjs.1.6.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/common/common.js" />"></script>
     <!--<script src="<c:url value="/resources/js/common/angularjs.1.6.1.min.js" />"></script>
     <script src="<c:url value="/resources/js/common/kendo.all.min.js" />"></script>
@@ -94,17 +95,22 @@
             </li>
         </ul>
         <div class="left-block">
-            <div class="content">
-                <span class="login-icon">&nbsp;</span>
-                <a class="login" href="${pageContext.request.contextPath}/login" title="Вход">Вход</a>
-            </div>
+            <c:choose>
+                <c:when test="${pageContext.request.userPrincipal.name == null}">
+                    <div class="login-content">
+                        <span class="login-icon">&nbsp;</span>
+                        <a class="login" href="${pageContext.request.contextPath}/login" title="Вход">Вход</a>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="logout-content">
+                        <a class="user-name" href="#">${pageContext.request.userPrincipal.name}</a>
+                        <a class="logout" href="${pageContext.request.contextPath}/logout"></a>
+                    </div>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </div>
-
-
-<c:if test="${pageContext.request.userPrincipal.name != null}">
-    <h1>Welcome ${pageContext.request.userPrincipal.name}</h1>
-</c:if>
 </body>
 </html>

@@ -1,0 +1,49 @@
+#login-page {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+}
+
+#login-page div.center {
+    margin: 20px 20px 20px 20px;
+    width: 785px;
+}
+
+#login-page div h1 {
+    text-align: center;
+    color: #029600;
+    font: bold 24px/24px Arial;
+    margin: 0 0 25px;
+}
+
+#login-page div div.row-element {
+    margin: 0 20px 0 20px;
+}
+
+#login-page div div div label {
+    font: 18px/26px Arial;
+    margin: 20px;
+    float: left;
+    width: 10%;
+}
+
+#login-page div div div input {
+    margin: 20px 0 20px 0;
+    float: left;
+    width: 82%;
+}
+
+#login-page div div input.form-submit {
+    float: right;
+    margin: 0 36px 20px 0;
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -318px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 14px/26px Arial;
+    height: 31px;
+    padding: 0 0 2px;
+    width: 145px;
+}
+

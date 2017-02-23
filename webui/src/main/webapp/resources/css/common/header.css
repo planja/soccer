@@ -48,11 +48,15 @@
     margin-top: -10px;
 }
 
-#menu div.left-block div.content {
+#menu div div.login-content {
     margin-left: 55px;
 }
 
-#menu div.left-block div.content span.login-icon {
+#menu div div.logout-content {
+    margin-top: 12px;
+}
+
+#menu div div span.login-icon {
     display: block;
     float: left;
     background: url(/resources/images/common/background1.png) no-repeat scroll -52px -25px;
@@ -61,13 +65,27 @@
     margin-right: 10px;
 }
 
-#menu div.left-block div.content a.login {
+#menu div div a.logout {
+    margin-right: 15px;
+    background: transparent url(/resources/images/common/background1.png) no-repeat scroll 0 -20px;
+    float: right;
+    height: 19px;
+    text-decoration: none;
+    width: 22px;
+}
+
+#menu div div a.user-name {
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+#menu div div a.login {
     display: block;
     color: #ffffff;
     margin-top: 11px;
     width: 65px;
 }
 
-#menu div.left-block div.content a:hover {
+#menu div div a:hover {
     text-decoration: underline;
 }

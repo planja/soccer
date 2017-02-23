@@ -17,12 +17,8 @@
 </t:header>
 
 
-<div id="left-news">
-    <t:left-top-news>
-    </t:left-top-news>
-    <t:left-bottom-news>
-    </t:left-bottom-news>
-</div>
+<t:news>
+</t:news>
 
 <div id="middle-news">
 </div>

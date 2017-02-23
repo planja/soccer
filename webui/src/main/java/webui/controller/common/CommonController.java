@@ -17,4 +17,9 @@ public class CommonController {
         return "common/denied";
     }
 
+    @RequestMapping(value = "/loginfailure", method = RequestMethod.GET)
+    public String loginFailure() {
+        return "common/loginfailure";
+    }
+
 }

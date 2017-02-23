@@ -11,34 +11,48 @@
 <html>
 <head>
 </head>
-<body>
+<body ng-app="soccerApp">
 
+<link rel="stylesheet" href="<c:url value="/resources/css/login/login.css" />">
 <t:header>
     <title>Вход</title>
 </t:header>
+
+
+<t:news>
+</t:news>
+
+<div id="login-page" ng-controller="loginController">
+    <div class="center">
+        <h1>Вы можете зайти на сайт используя логин и пароль</h1>
+        <div class="row-element">
+            <div class="row">
+                <label for="login">Логин</label>
+                <input ng-model="loginData.login" type="text" id="login" name="login" maxlength="128">
+            </div>
+
+        </div>
+        <div class="row-element">
+            <div class="row">
+                <label for="password">Пароль</label>
+                <input ng-model="loginData.password" type="password" id="password" name="password" maxlength="128">
+            </div>
+        </div>
+        <div class="row">
+            <input type="button" id="submit" value="Войти" class="form-submit" ng-click="login(loginData)">
+        </div>
+    </div>
+</div>
+
+<t:tournaments>
+</t:tournaments>
+
 <t:footer>
 </t:footer>
 
-<div id="center">
-    <form name='form' action="${pageContext.request.contextPath}/j_spring_security_check" method='POST'>
-        <label>
-            <span>User name</span>
-            <input type="text"
-                   name="login" pattern=".{3,}"
-                   maxlength="100"
-                   required="required"/>
-        </label>
-        <label>
-            <span>Password</span>
-            <input type="password"
-                   name="password" pattern=".{3,}"
-                   maxlength="100"
-                   required="required"/>
-        </label>
-        <button type="submit">Login</button>
-    </form>
-</div>
-
-
 </body>
+<script src="<c:url value="/resources/js/login/login.js" />"></script>
+<script src="<c:url value="/resources/js/common/jquery.noty.packaged.js" />"></script>
 </html>
+
+
