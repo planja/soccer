@@ -3,23 +3,14 @@
  */
 function validate(loginData) {
     if (loginData.login.length < 5) {
-        notify('topCenter', 'error', 'Укажите корректный логин');
+        notify('topCenter', 'error', 'Длина логина должна быть не менее 5 символов');
         return false;
     }
     if (loginData.password.length < 5) {
-        notify('topCenter', 'error', 'Укажите корректный пароль');
+        notify('topCenter', 'error', 'Длина пароля должна быть не менее 5 символов');
         return false;
     }
     return true;
-}
-
-function notify(layout, type, text) {
-    noty({
-        layout: layout,
-        type: type,
-        timeout: 3000,
-        text: text
-    });
 }
 
 soccerApp.controller("loginController",

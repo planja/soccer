@@ -52,7 +52,6 @@
 
 </body>
 <script src="<c:url value="/resources/js/login/login.js" />"></script>
-<script src="<c:url value="/resources/js/common/jquery.noty.packaged.js" />"></script>
 </html>
 
 

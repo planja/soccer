@@ -5,5 +5,11 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
-  <display-name>soccer</display-name>
+    <display-name>soccer</display-name>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/pages/common/notfound.jsp</location>
+    </error-page>
+
 </web-app>
