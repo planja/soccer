@@ -19,6 +19,7 @@ function validate(registrationData) {
         notify('topCenter', 'error', 'Длина пароля должна быть не менее 5 символов');
         return false;
     }
+
     return true;
 }
 
@@ -37,6 +38,15 @@ soccerApp.controller("registrationController",
                 alert("sosi")
         }
     });
+
+function onChangeImage(files) {
+    if (files.length != 0) {
+        var image = $("#avatar-image")[0];
+        image.src = window.URL.createObjectURL(files[files.length - 1]);
+        image.height = 89;
+        image.width = 100;
+    }
+}
 
 
 $(document).ready(function () {

@@ -75,4 +75,9 @@
     position: absolute;
 }
 
+#registration div div div div span#help-text {
+    font-size: 15px;
+    color: #555555;
+}
+
 

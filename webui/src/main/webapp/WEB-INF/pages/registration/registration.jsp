@@ -56,9 +56,11 @@
             <div class="row">
                 <div id="file-input">
                     <span>Аватар</span>
-                    <input id="avatar" type="file" multiple accept="image/jpeg,image/png">
-                    <img title="Ваш аватар" alt=""
+                    <input id="avatar" type="file" multiple accept="image/jpeg,image/png"
+                           onchange="onChangeImage(this.files)">
+                    <img id="avatar-image" title="Ваш аватар" alt=""
                          src="${pageContext.request.contextPath}/resources/images/registration/default-avatar.gif"/>
+                    <span id="help-text">Размер должен быть 100x90</span>
                 </div>
             </div>
         </div>

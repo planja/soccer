@@ -24,7 +24,7 @@
 
 <div id="login-page" ng-controller="loginController">
     <div class="center">
-        <h1>Вы можете зайти на сайт используя логин и пароль</h1>
+        <h1>Вы можете войти или <a href="${pageContext.request.contextPath}/registration">зарегистрироваться</a></h1>
         <div class="row-element">
             <div class="row">
                 <label for="login">Логин</label>
