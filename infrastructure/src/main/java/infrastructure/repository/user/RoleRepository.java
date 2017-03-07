@@ -1,6 +1,6 @@
 package infrastructure.repository.user;
 
-import domain.entity.user.Role;
+import domain.entity.role.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

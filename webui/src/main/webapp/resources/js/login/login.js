@@ -34,7 +34,7 @@ soccerApp.controller("loginController",
                                 login: "",
                                 password: ""
                             };
-                        } else window.location.href = "/";
+                        } //else window.location.href = "/";
                     }, function (data) {
                     });
             }

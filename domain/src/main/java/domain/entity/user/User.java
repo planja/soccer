@@ -1,5 +1,7 @@
 package domain.entity.user;
 
+import domain.entity.role.Role;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -28,6 +30,9 @@ public class User {
 
     @Column(name = "mail")
     private String mail;
+
+    @Column(name = "image")
+    private byte[] image;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE})
     private Set<Role> roles = new HashSet<>();
@@ -75,6 +80,14 @@ public class User {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public Set<Role> getRoles() {

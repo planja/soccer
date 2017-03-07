@@ -184,6 +184,13 @@
 
         <!-- Jackson JSON Mapper -->
 
+        <!-- Base 64 encoder decoder -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+        </dependency>
+
 
 
     </dependencies>

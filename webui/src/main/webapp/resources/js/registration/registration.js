@@ -23,6 +23,8 @@ function validate(registrationData) {
     return true;
 }
 
+var imageString = null;
+
 soccerApp.controller("registrationController",
     function RegistrationController($scope, $http) {
         $scope.registrationData = {
@@ -34,17 +36,55 @@ soccerApp.controller("registrationController",
         };
 
         $scope.save = function (registrationData) {
-            if (validate(registrationData))
-                alert("sosi")
+            if (validate(registrationData)) {
+
+                var isValidaForDuplicate = false;
+                $.ajax({
+                    type: "GET",
+                    url: "/registration/isvalidtoduplicate/" + registrationData.login,
+                    async: false,
+                    success: function (data) {
+                        isValidaForDuplicate = data == "true";
+                    }
+                });
+
+                if (isValidaForDuplicate) {
+                    var data = {
+                        id: null,
+                        login: registrationData.login,
+                        name: registrationData.name,
+                        mail: registrationData.mail,
+                        password: registrationData.password,
+                        imageString: imageString == null ? null : imageString.substring(imageString.indexOf("base64,") + 7)
+                    };
+
+                    $http.post("/registration/saveuser", data)
+                        .then(function (data) {
+                            window.location.href = "/";
+                        }, function (data) {
+
+                        });
+                } else {
+                    notify('topCenter', 'error', 'Пользователь с таким логином уже существует');
+                }
+
+
+            }
         }
     });
 
 function onChangeImage(files) {
     if (files.length != 0) {
-        var image = $("#avatar-image")[0];
-        image.src = window.URL.createObjectURL(files[files.length - 1]);
-        image.height = 89;
-        image.width = 100;
+        var fileReader = new FileReader();
+        fileReader.addEventListener("load", function (e) {
+            var image = document.getElementById("avatar-image");
+            image.src = e.target.result;
+            image.height = 89;
+            image.width = 100;
+            imageString = e.target.result;
+        });
+
+        fileReader.readAsDataURL(files[files.length - 1]);
     }
 }
 

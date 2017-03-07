@@ -1,4 +1,6 @@
-package domain.entity.user;
+package domain.entity.role;
+
+import domain.entity.user.User;
 
 import javax.persistence.*;
 
