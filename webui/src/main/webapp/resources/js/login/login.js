@@ -34,8 +34,12 @@ soccerApp.controller("loginController",
                                 login: "",
                                 password: ""
                             };
-                        } //else window.location.href = "/";
+                        } else if (data.data.indexOf("<title>Admin</title>") != -1) {
+                            window.location.href = "/admin";
+                        } else window.location.href = "/";
                     }, function (data) {
+                        if (data.data.indexOf("<title>Доступ запрещён</title>") != -1)
+                            window.location.href = "/denied";
                     });
             }
         }

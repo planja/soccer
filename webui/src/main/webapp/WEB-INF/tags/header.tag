@@ -105,7 +105,7 @@
                 </c:when>
                 <c:otherwise>
                     <div class="logout-content">
-                        <a class="user-name" href="#">${pageContext.request.userPrincipal.name}</a>
+                        <a class="user-name" href="${pageContext.request.contextPath}/user">${pageContext.request.userPrincipal.name}</a>
                         <a class="logout" href="${pageContext.request.contextPath}/logout"></a>
                     </div>
                 </c:otherwise>

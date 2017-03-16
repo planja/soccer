@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import webui.viewmodel.registration.RegistrationViewModel;
+import webui.viewmodel.user.UserViewModel;
 
 import java.security.Principal;
 
@@ -32,8 +32,8 @@ public class RegistrationController {
     }
 
     @RequestMapping(value = "/saveuser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Void> saveUser(@RequestBody RegistrationViewModel registrationViewModel) {
-        userService.saveUser(registrationViewModel.toUser());
+    public ResponseEntity<Void> saveUser(@RequestBody UserViewModel userViewModel) {
+        userService.saveUser(userViewModel.toUser());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -1,0 +1,13 @@
+.center-content{
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    height: 170px;
+}
+
+.center-content h1{
+    color: #029600;
+    font: bold 24px/24px Arial;
+    margin: 25px;
+}

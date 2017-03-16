@@ -1,0 +1,27 @@
+.center-content {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    height: 170px;
+}
+
+.center-content h1 {
+    text-align: center;
+    color: #029600;
+    font: bold 24px/24px Arial;
+    margin: 25px;
+}
+
+.to-main-page{
+    margin: 0 25px 25px 25px;
+    font-weight: bold;
+    color: #66b359;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.to-main-page:hover{
+    color: #66b359;
+    text-decoration: none;
+}

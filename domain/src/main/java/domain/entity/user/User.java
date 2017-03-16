@@ -34,7 +34,7 @@ public class User {
     @Column(name = "image")
     private byte[] image;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE})
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private Set<Role> roles = new HashSet<>();
 
     public User() {

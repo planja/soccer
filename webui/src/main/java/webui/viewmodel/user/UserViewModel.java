@@ -1,17 +1,16 @@
-package webui.viewmodel.registration;
+package webui.viewmodel.user;
 
 import domain.entity.role.Role;
 import domain.entity.user.User;
 import org.apache.commons.codec.binary.Base64;
 
-import java.util.Collections;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
  * Created by ShchykalauM on 07.03.2017.
  */
-public class RegistrationViewModel {
+public class UserViewModel {
 
     private Long id;
 
@@ -25,7 +24,7 @@ public class RegistrationViewModel {
 
     private String imageString;
 
-    public RegistrationViewModel() {
+    public UserViewModel() {
     }
 
 
