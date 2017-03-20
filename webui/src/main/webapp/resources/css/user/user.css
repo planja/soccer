@@ -1,4 +1,4 @@
-.center-content{
+.center-content {
     margin: 20px 0 0 20px;
     float: left;
     width: 825px;
@@ -6,8 +6,29 @@
     height: 170px;
 }
 
-.center-content h1{
+.center-content h1 {
     color: #029600;
     font: bold 24px/24px Arial;
     margin: 25px;
+}
+
+.center-content div.header {
+    width: 50%;
+    margin: 0 auto;
+    background: #4da23f;
+    color: #ffffff;
+    font: 14px/20px Arial;
+    padding: 11px 6px;
+}
+
+.center-content div div.menu {
+    text-align: center;
+}
+
+.center-content div div a {
+    color: #fff;
+}
+
+.center-content div div a:hover {
+    cursor: hand;
 }

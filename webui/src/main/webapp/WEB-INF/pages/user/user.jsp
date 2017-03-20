@@ -13,7 +13,7 @@
     <title>${pageContext.request.userPrincipal.name}</title>
     <link rel="stylesheet" href="<c:url value="/resources/css/user/user.css" />">
 </head>
-<body>
+<body ng-app="soccerApp">
 
 <t:header>
 </t:header>
@@ -21,8 +21,15 @@
 <t:news>
 </t:news>
 
-<div class="center-content">
+<div id="user-details" class="center-content" ng-controller="userController">
     <h1>${pageContext.request.userPrincipal.name}</h1>
+    <div class="header">
+        <div class="menu">
+            <a ng-click="loadProfile()">Профиль</a> |
+            <a href="/user/399977/edit">Комментарии</a>
+        </div>
+    </div>
+
 </div>
 
 <t:tournaments>
@@ -32,4 +39,5 @@
 </t:footer>
 
 </body>
+<script src="<c:url value="/resources/js/user/user.js" />"></script>
 </html>
