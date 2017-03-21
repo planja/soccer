@@ -4,9 +4,19 @@
 
 soccerApp.controller("userController",
     function UserController($scope, $http) {
-        $scope.loadProfile = function () {
-            alert('sosi');
-        }
 
+        $scope.data = "qwe";
+        $scope.loadProfile = function () {
+            $.ajax({
+                type: "GET",
+                url: "/user/loaduserprofile",
+                async: false,
+                success: function (data) {
+                    var q = 0;
+                }
+            });
+        };
+
+        $scope.loadProfile();
 
     });

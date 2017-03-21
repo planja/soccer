@@ -27,6 +27,15 @@ public class UserViewModel {
     public UserViewModel() {
     }
 
+    public UserViewModel(User user) {
+        this.id = user.getId();
+        this.login = user.getLogin();
+        this.name = user.getName();
+        this.mail = user.getMail();
+        this.password = user.getPassword();
+        this.imageString = user.getImage() == null ? null : new Base64().encodeAsString(user.getImage());
+    }
+
 
     public User toUser() {
         User user = new User();

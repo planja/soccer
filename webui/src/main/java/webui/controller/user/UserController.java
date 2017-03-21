@@ -30,14 +30,15 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String user(Principal principal) {
-        return "user/user";
+        return principal != null ? "user/user" : "common/index";
     }
 
-    /*@RequestMapping(value = "/getUserInvoices", method = RequestMethod.GET,
+    @RequestMapping(value = "/loaduserprofile", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public
     @ResponseBody
-    UserViewModel loadUserData(Principal principal) {
-        User user
-    }*/
+    UserViewModel loadUserProfile(Principal principal) {
+        User user = userService.findByLogin(principal.getName());
+        return new UserViewModel(user);
+    }
 }

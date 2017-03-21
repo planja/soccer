@@ -14,4 +14,6 @@ public interface IUserService extends UserDetailsService {
 
     List<User> findUsers();
 
+    User findByLogin(String login);
+
 }

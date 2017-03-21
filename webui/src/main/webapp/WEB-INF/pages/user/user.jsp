@@ -25,11 +25,11 @@
     <h1>${pageContext.request.userPrincipal.name}</h1>
     <div class="header">
         <div class="menu">
-            <a ng-click="loadProfile()">Профиль</a> |
+            <a href="#/userprofile">Профиль</a> |
             <a href="/user/399977/edit">Комментарии</a>
         </div>
     </div>
-
+    <ng-view></ng-view>
 </div>
 
 <t:tournaments>
