@@ -67,8 +67,6 @@ soccerApp.controller("registrationController",
                 } else {
                     notify('topCenter', 'error', 'Пользователь с таким логином уже существует');
                 }
-
-
             }
         }
     });

@@ -25,11 +25,65 @@
     <h1>${pageContext.request.userPrincipal.name}</h1>
     <div class="header">
         <div class="menu">
-            <a href="#/userprofile">Профиль</a> |
-            <a href="/user/399977/edit">Комментарии</a>
+            <a ng-click="showProfile()">Профиль</a> |
+            <a ng-click="showComments()">Комментарии</a>
         </div>
     </div>
-    <ng-view></ng-view>
+
+    <div id="user-profile" ng-show="showProfileValue">
+        <div class="center">
+            <div class="row-element">
+                <div class="row">
+                    <label for="login">Логин</label>
+                    <input ng-model="data.login" type="text" id="login" name="login" maxlength="128">
+                </div>
+            </div>
+
+            <div class="row-element">
+                <div class="row">
+                    <label for="name">Имя</label>
+                    <input ng-model="data.name" type="text" id="name" name="name" maxlength="128">
+                </div>
+            </div>
+
+            <div class="row-element">
+                <div class="row">
+                    <label for="mail">E-mail</label>
+                    <input ng-model="data.mail" type="email" id="mail" name="mail" maxlength="128">
+                </div>
+            </div>
+
+            <div class="row-element">
+                <div class="row">
+                    <label for="password">Пароль</label>
+                    <input ng-model="data.password" type="password" id="password" name="password"
+                           maxlength="128">
+                </div>
+            </div>
+            <div class="row-element">
+                <div class="row">
+                    <div id="file-input">
+                        <span>Аватар</span>
+                        <input id="avatar" type="file" multiple accept="image/jpeg,image/png"
+                               onchange="onChangeImage(this.files)">
+                        <img id="avatar-image" title="Ваш аватар" alt=""
+                             src="${pageContext.request.contextPath}/resources/images/registration/default-avatar.gif"/>
+                        <span id="help-text">Размер должен быть 100x90</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="button" id="submit" value="Обновить" class="form-submit"
+                       ng-click="updateProfile(data)">
+            </div>
+        </div>
+    </div>
+
+    <div id="comments" ng-show="showCommentsValue">
+        <h1>comments</h1>
+    </div>
+
+
 </div>
 
 <t:tournaments>

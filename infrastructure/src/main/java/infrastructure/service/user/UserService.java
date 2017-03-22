@@ -49,6 +49,7 @@ public class UserService implements IUserService, UserDetailsService {
         return savedUser;
     }
 
+
     @Override
     public List<User> findUsers() {
         return userRepository.findAll();
@@ -57,5 +58,20 @@ public class UserService implements IUserService, UserDetailsService {
     @Override
     public User findByLogin(String login) {
         return userRepository.findByLogin(login);
+    }
+
+    @Override
+    public User updateUser(User user) {
+        User updatedUser = userRepository.findOne(user.getId());
+        updatedUser.setImage(user.getImage());
+        updatedUser.setPassword(user.getPassword());
+        updatedUser.setMail(user.getMail());
+        updatedUser.setLogin(user.getLogin());
+        updatedUser.setName(user.getName());
+        updatedUser = userRepository.save(updatedUser);
+        UserDetails userDetails = this.loadUserByUsername(updatedUser.getLogin());
+        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
+                userDetails, user.getPassword(), userDetails.getAuthorities()));
+        return updatedUser;
     }
 }

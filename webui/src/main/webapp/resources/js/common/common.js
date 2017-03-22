@@ -2,14 +2,8 @@
  * Created by ShchykalauM on 21.02.2017.
  */
 
-var soccerApp = angular.module("soccerApp", ["ngRoute"])
-    .config(function ($routeProvider) {
-        $routeProvider.when('/userprofile',
-            {
-                templateUrl: 'user/user-profile.jsp',
-                controller: 'userController'
-            });
-    });
+var soccerApp = angular.module("soccerApp", []);
+
 
 function notify(layout, type, text) {
     noty({

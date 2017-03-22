@@ -16,4 +16,6 @@ public interface IUserService extends UserDetailsService {
 
     User findByLogin(String login);
 
+    User updateUser(User user);
+
 }

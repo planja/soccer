@@ -3,7 +3,8 @@
     float: left;
     width: 825px;
     background-color: #ffffff;
-    height: 170px;
+    min-height: 180px;
+    max-height: 610px;
 }
 
 .center-content h1 {
@@ -32,3 +33,83 @@
 .center-content div div a:hover {
     cursor: hand;
 }
+
+#user-profile div.center {
+    width: 785px;
+    margin: 25px 20px 20px 20px;
+}
+
+#user-profile div div.row-element {
+    margin: 0 20px 0 20px;
+}
+
+#user-profile div div div label {
+    font: 18px/26px Arial;
+    margin: 20px;
+    float: left;
+    width: 10%;
+}
+
+#user-profile div div div input {
+    border-radius: 7px;
+    height: 35px;
+    float: left;
+    width: 82%;
+    margin: 20px 0 20px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+#user-profile div div div input:focus {
+    border: 3px solid #4da23f;
+}
+
+#user-profile div div input.form-submit {
+    float: right;
+    margin: 0 36px 20px 0;
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -318px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 14px/26px Arial;
+    height: 31px;
+    padding: 0 0 2px;
+    width: 145px;
+}
+
+#user-profile div div div div#file-input {
+    margin-top: 20px;
+}
+
+#user-profile div div div input#avatar {
+    margin: 0 0 0 117px;
+    float: inherit;
+    opacity: 0;
+    cursor: pointer;
+    width: 100px;
+    height: 89px;
+    font-size: 0;
+    position: absolute;
+}
+
+#user-profile div div div div img {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #029600;
+    margin: 0 0 0 117px;
+}
+
+#user-profile div div div div span {
+    margin: 33px 0 0 20px;
+    font: 18px/26px Arial;
+    position: absolute;
+}
+
+#user-profile div div div div span#help-text {
+    font-size: 15px;
+    color: #555555;
+}
+

@@ -3,8 +3,11 @@ package webui.controller.user;
 import domain.entity.user.User;
 import infrastructure.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -40,5 +43,11 @@ public class UserController {
     UserViewModel loadUserProfile(Principal principal) {
         User user = userService.findByLogin(principal.getName());
         return new UserViewModel(user);
+    }
+
+    @RequestMapping(value = "/updateuser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Void> saveUser(@RequestBody UserViewModel userViewModel) {
+        userService.updateUser(userViewModel.toUser());
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
