@@ -18,4 +18,8 @@ public interface IUserService extends UserDetailsService {
 
     User updateUser(User user);
 
+    User updateRoles(User user);
+
+    void delete(Long id);
+
 }

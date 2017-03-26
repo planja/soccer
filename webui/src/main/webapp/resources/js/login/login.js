@@ -34,7 +34,7 @@ soccerApp.controller("loginController",
                                 login: "",
                                 password: ""
                             };
-                        } else if (data.data.indexOf("<title>Admin</title>") != -1) {
+                        } else if (data.data.indexOf("/resources/css/admin/admin.css") != -1) {
                             window.location.href = "/admin";
                         } else window.location.href = "/";
                     }, function (data) {

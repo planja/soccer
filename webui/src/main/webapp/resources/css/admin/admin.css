@@ -1,0 +1,29 @@
+.center-content {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    min-height: 120px;
+    max-height: 610px;
+}
+
+.center-content div.header {
+    width: 50%;
+    margin: 50px auto;
+    background: #4da23f;
+    color: #ffffff;
+    font: 14px/20px Arial;
+    padding: 11px 6px;
+}
+
+.center-content div div.menu {
+    text-align: center;
+}
+
+.center-content div div.menu a {
+    color: #fff;
+}
+
+.center-content div div a:hover {
+    cursor: hand;
+}

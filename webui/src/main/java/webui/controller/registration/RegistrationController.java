@@ -1,5 +1,6 @@
 package webui.controller.registration;
 
+import domain.entity.user.User;
 import infrastructure.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import webui.viewmodel.user.UserViewModel;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by ShchykalauM on 24.02.2017.
@@ -40,7 +43,20 @@ public class RegistrationController {
     @RequestMapping(value = "/isvalidtoduplicate/{login}", method = RequestMethod.GET)
     public
     @ResponseBody
-    String isValidToSaveForDuplicate(@PathVariable String login) {
-        return String.valueOf(userService.findUsers().stream().noneMatch(o -> o.getLogin().equals(login)));
+    String isValidToSaveForDuplicate(@PathVariable String login, Principal principal) {
+        List<User> loginList = userService.findUsers().stream().filter(o -> o.getLogin().equals(login))
+                .collect(Collectors.toList());
+        if (loginList.size() == 0)
+            return String.valueOf(true);
+        else {
+            if (principal == null)
+                return String.valueOf(false);
+            else {
+                User user = userService.findByLogin(principal.getName());
+                if (user.getId().equals(loginList.get(0).getId()))
+                    return String.valueOf(true);
+                else return String.valueOf(false);
+            }
+        }
     }
 }

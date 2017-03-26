@@ -17,7 +17,7 @@
     <script src="<c:url value="/resources/js/common/jquery.noty.packaged.js" />"></script>
     <script src="<c:url value="/resources/js/common/common.js" />"></script>
     <!--<script src="<c:url value="/resources/js/common/angularjs.1.6.1.min.js" />"></script>
-    <script src="<c:url value="/resources/js/common/kendo.all.min.js" />"></script>
+
     <script src="<c:url value="/resources/js/common/moment.min.js" />"></script>-->
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
 </head>

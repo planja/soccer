@@ -1,6 +1,7 @@
 package infrastructure.service.user;
 
 import domain.entity.user.User;
+import infrastructure.repository.user.RoleRepository;
 import infrastructure.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,10 +25,12 @@ import java.util.stream.Collectors;
 public class UserService implements IUserService, UserDetailsService {
 
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
     }
 
     @Override
@@ -73,5 +76,20 @@ public class UserService implements IUserService, UserDetailsService {
         SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
                 userDetails, user.getPassword(), userDetails.getAuthorities()));
         return updatedUser;
+    }
+
+    @Override
+    @Transactional
+    public User updateRoles(User user) {
+        roleRepository.deleteRolesByUserId(user.getId());
+        User find = userRepository.findOne(user.getId());
+        find.setRoles(user.getRoles());
+        return userRepository.save(find);
+
+    }
+
+    @Override
+    public void delete(Long id) {
+        userRepository.delete(id);
     }
 }
