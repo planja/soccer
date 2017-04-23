@@ -4,6 +4,9 @@
 
 var soccerApp = angular.module("soccerApp", []);
 
+var apiKey = "2b540c29c8394bd2aae779960d4fa5b5";
+
+var apiUrl = "https://api.crowdscores.com/v1/";
 
 function notify(layout, type, text) {
     noty({
@@ -25,7 +28,6 @@ function findInDataSourcePropertiesByValue(data, filter_property, values, return
     });
     return items.join(',\n');
 }
-
 
 $(document).ready(function () {
     $('.menu > li').parent().find('ul').toggle();

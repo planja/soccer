@@ -77,5 +77,10 @@ public class AdminController {
         return new UserForAdminViewModel(userService.updateRoles(user));
     }
 
+    @RequestMapping(value = "/admindata", method = RequestMethod.GET)
+    public String adminData() {
+        return "admin/admin-data";
+    }
+
 
 }

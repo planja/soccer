@@ -1,0 +1,26 @@
+.center-content {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    min-height: 420px;
+    max-height: 610px;
+}
+
+#admin-data-content{
+    width: 785px;
+    margin: 25px 20px 20px 20px;
+}
+
+.submit {
+    float: left;
+    margin: 0 36px 20px 0;
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -388px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 14px/26px Arial;
+    height: 31px;
+    padding: 0 0 2px;
+    width: 220px;
+}

@@ -25,7 +25,7 @@
     <div class="header">
         <div class="menu">
             <a href="${pageContext.request.contextPath}/admin/adminusers">Пользователи</a> |
-            <a ng-click="showComments()">Комментарии</a>
+            <a href="${pageContext.request.contextPath}/admin/admindata">Данные</a> |
         </div>
     </div>
 
