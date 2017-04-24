@@ -38,7 +38,7 @@
                     <div class="content">
                         <img src="{{item.shirtUrl}}">
                         <div class="item-text">
-                            <a title="{{item.name}}">{{item.name}}</a>
+                            <a href="/teams/teaminfo/{{item.dbid}}" title="{{item.name}}">{{item.name}}</a>
                         </div>
                     </div>
                 </div>

@@ -10,12 +10,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import webui.viewmodel.admin.UserForAdminViewModel;
-import webui.viewmodel.user.UserViewModel;
+import org.springframework.web.servlet.ModelAndView;
+
 
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by Никита on 23.04.2017.
@@ -49,6 +48,11 @@ public class TeamsController {
     @ResponseBody
     List<Competition> getCompetitions() {
         return teamService.getCompetitions();
+    }
+
+    @RequestMapping(value = "/teaminfo/{dbId}", method = RequestMethod.GET)
+    public ModelAndView refSchedule(@PathVariable Long dbId) {
+        return new ModelAndView("/teams/team-info", "teamId", dbId);
     }
 
 }
