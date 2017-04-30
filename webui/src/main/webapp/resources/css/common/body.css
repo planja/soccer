@@ -79,7 +79,7 @@ body {
     margin: 20px 0 0 20px;
     background-color: #ffffff;
     width: 303px;
-    min-height: 640px;
+    min-height: 440px;
 }
 
 #matches-result div.title {
@@ -97,6 +97,188 @@ body {
     float: left;
     height: 18px;
     margin: 13px 10px 0 0;
+    width: 28px;
+}
+
+#match-detail{
+    width: 100%;
+    float: left;
+}
+
+#match-detail .home-img{
+    margin-top: 24px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -110px;
+}
+
+#match-detail .away-img{
+    margin-top: 54px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: -110px;
+}
+
+#match-detail .hover:hover{
+    background-color: rgb(222, 242, 223);
+    cursor: hand;
+}
+
+#match-detail .date{
+    width: 34%;
+    margin: 5px auto;
+}
+
+#match-detail .l{
+    background: url(/resources/images/common/background1.png) no-repeat scroll -150px 0;
+    float: left;
+    height: 19px;
+    width: 6px;
+}
+
+#match-detail .m{
+    text-align: center;
+    background: #FF9E23;
+    color: #fff !important;
+    font: 12px/20px Arial;
+    height: 19px;
+    float: left;
+    width: 91px;
+}
+
+#match-detail .r{
+    background: url(/resources/images/common/background1.png) no-repeat scroll -159px 0;
+    float: left;
+    height: 19px;
+    width: 6px;
+}
+
+#match-detail .match-info{
+    width: 100%;
+    height: 80px;
+}
+
+#match-detail .time{
+    margin-top: 30px;
+    margin-left: -170px;
+    background: transparent url(/resources/images/common/background1.png) no-repeat scroll -216px -21px;
+    color: #ffffff;
+    float: left;
+    font: 12px/20px Arial;
+    height: 19px;
+    text-align: center;
+    width: 50px;
+}
+
+.match-info img{
+    margin-top: -35px;
+    margin-right: 30px;
+    float: right;
+}
+
+#match-detail .home-team{
+    padding-left: 115px;
+    padding-top: 25px;
+}
+
+#match-detail .away-team{
+    padding-top: 10px;
+    padding-left: 115px
+}
+
+#match-detail a{
+    cursor: hand;
+    color: #5e5e5e;
+}
+
+#match-detail .home-score{
+    margin-top: -50px;
+    margin-right: 32px;
+    float: right;
+    color: #029600;
+    font-weight: bold;
+}
+#match-detail .away-score{
+    margin-right: 32px;
+    margin-top: -20px;
+    float: right;
+    color: #029600;
+    font-weight: bold;
+}
+
+#table{
+    float: right;
+    display: inline-block;
+    margin: 20px 194px 0 20px;
+    background-color: #ffffff;
+    width: 303px;
+    min-height: 440px;
+}
+
+#table div.title {
+    background: #4da23f;
+    color: #fff;
+    font: bold 16px/44px Arial;
+    padding: 0 5px 0 15px;
+    text-transform: uppercase;
+    height: 44px;
+}
+
+.table-content{
+    margin-top: 13px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.table-content .name{
+    width: 142px;
+}
+
+.table-content a{
+    color:#029600;
+}
+
+.table-content .header{
+    color: #ffffff;
+    font: bold 12px/15px Arial;
+    padding: 11px 4px 9px !important;
+    text-align: center;
+}
+
+.table-content .color {
+    background-color: #f6f6f6;
+}
+
+.table-content td{
+    color: #5e5e5e;
+    font: 12px/14px Arial;
+    padding: 4px 3px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-content .team-name{
+    text-align: left;
+}
+
+.table-content .points{
+    color:#029600;
+}
+
+#table tr.green{
+    background-color: #62ca52;
+    color: #fff;
+    font-weight: bold;
+}
+
+#table div span span.block-title-icon {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -22px -23px;
+    display: block;
+    float: left;
+    height: 25px;
+    margin: 9px 10px 0 0;
     width: 28px;
 }
 
@@ -126,6 +308,8 @@ body {
     margin: 10px 10px 0 0;
     width: 28px;
 }
+
+
 
 #tournaments ul.menu {
     padding: 10px 0 0 10px;

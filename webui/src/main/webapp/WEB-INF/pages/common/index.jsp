@@ -16,20 +16,28 @@
     <title>Футбол, новости российского, европейского и мирового футбола</title>
 </t:header>
 
+<div id="index" ng-app="soccerApp" ng-controller="indexController">
+    <t:news>
+    </t:news>
 
-<t:news>
-</t:news>
+    <div id="middle-news">
+    </div>
 
-<div id="middle-news">
+    <t:matches-result>
+    </t:matches-result>
+
+    <t:tournaments>
+    </t:tournaments>
+
+    <t:table>
+    </t:table>
+
+
+    <t:footer>
+    </t:footer>
 </div>
 
-<t:matches-result>
-</t:matches-result>
 
-<t:tournaments>
-</t:tournaments>
-
-<t:footer>
-</t:footer>
 </body>
+<script src="<c:url value="/resources/js/common/index.js" />"></script>
 </html>
