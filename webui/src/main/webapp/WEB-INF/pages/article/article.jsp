@@ -11,7 +11,12 @@
 <html>
 <head>
     <title>Новая статья</title>
-    <link rel="stylesheet" href="<c:url value="/resources/css/teams/teams.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/article/article.css" />">
+
+    <link rel="stylesheet" href="<c:url value="/resources/css/froala/font-awesome.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/froala/codemirror.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/froala/froala_editor.pkgd.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/froala/froala_style.min.css" />">
 </head>
 <body ng-app="soccerApp">
 
@@ -25,6 +30,8 @@
     <h1>Новая статья</h1>
 
     <div class="content">
+        <br><br>
+        <div id="edit"></div>
     </div>
 
 
@@ -37,5 +44,10 @@
 </t:footer>
 
 </body>
+<script src="<c:url value="/resources/js/froala/codemirror.min.js" />"></script>
+<script src="<c:url value="/resources/js/froala/xml.min.js" />"></script>
+<script src="<c:url value="/resources/js/froala/froala_editor.pkgd.min.js" />"></script>
+<script src="<c:url value="/resources/js/froala/ru.js" />"></script>
+
 <script src="<c:url value="/resources/js/article/article.js" />"></script>
 </html>
