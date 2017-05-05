@@ -57,6 +57,7 @@ soccerApp.controller("indexController",
                     if ($scope.pastMatches.length >= 10) {
                         $scope.pastMatches = $scope.pastMatches.slice($scope.pastMatches.length - 10, $scope.pastMatches.length);
                     }
+                    $scope.pastMatches = $scope.pastMatches.reverse();
                 })
         };
         $scope.loadMatches();

@@ -89,7 +89,7 @@
                 <a href="${pageContext.request.contextPath}/teams" title="Главная">Команды</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
+                <a href="${pageContext.request.contextPath}/article" title="Новая статья">Новая статья</a>
             </li>
             <li>
                 <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
