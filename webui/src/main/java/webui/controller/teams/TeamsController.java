@@ -32,9 +32,21 @@ public class TeamsController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String registration() {
+    public String teams() {
         return "teams/teams";
     }
+
+
+    @RequestMapping(value = "table", method = RequestMethod.GET)
+    public String table() {
+        return "teams/table";
+    }
+
+    @RequestMapping(value = "result", method = RequestMethod.GET)
+    public String result() {
+        return "teams/result";
+    }
+
 
     @RequestMapping(value = "/updatecompetitions/{key}", method = RequestMethod.GET)
     public ResponseEntity<Void> updateCompetitions(@PathVariable String key) throws IOException {

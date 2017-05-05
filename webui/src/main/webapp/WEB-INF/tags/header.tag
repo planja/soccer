@@ -89,11 +89,23 @@
                 <a href="${pageContext.request.contextPath}/teams" title="Главная">Команды</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/article" title="Новая статья">Новая статья</a>
+                <a href="${pageContext.request.contextPath}/teams/result" title="Результаты">Результаты</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
+                <a href="${pageContext.request.contextPath}/teams/table" title="Турнирная таблица">Турнирная таблица</a>
             </li>
+            <c:if test="${pageContext.request.isUserInRole('BLOGGER')||pageContext.request.isUserInRole('ADMIN')}">
+                <li>
+                    <a href="${pageContext.request.contextPath}/article" title="Новая статья">Новая статья</a>
+                </li>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('ADMIN')}">
+                <li>
+                    <a href="${pageContext.request.contextPath}/admin" title="Панель администратора">Панель администратора</a>
+                </li>
+            </c:if>
+
+
         </ul>
         <div class="left-block">
             <c:choose>

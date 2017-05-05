@@ -1,0 +1,17 @@
+.center-content {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    min-height: 380px;
+}
+
+.center-content h1 {
+    color: #029600;
+    font: bold 24px/24px Arial;
+    margin: 25px 25px 0 25px;
+}
+
+.content {
+    margin: 0 25px 25px 25px;
+}

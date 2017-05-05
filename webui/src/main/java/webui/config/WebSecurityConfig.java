@@ -52,11 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         ).access("hasRole('ROLE_ADMIN')");
 
         http.authorizeRequests().antMatchers(
-                "/invoice",
-                "/getUserInvoicesForNonUser",
-                "/updateInvoiceForNonUser",
-                "/deleteInvoiceForNonUser/**"
-        ).access("hasAnyRole('ROLE_ADMIN', 'ROLE_OPERATOR')");
+                "/article"
+        ).access("hasAnyRole('ROLE_ADMIN', 'ROLE_BLOGGER')");
 
         // When the user has logged in as XX.
         // But access a page that requires role YY,
