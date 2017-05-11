@@ -29,7 +29,7 @@
         <div>
             <img ng-src="{{selectedCompetition.flagUrl}}">
         </div>
-        <select ng-change="changeTeams(selectedCompetition)" ng-model="selectedCompetition" ng-options="item.fullName + item.region for item in competitions">>
+        <select ng-change="changeTeams(selectedCompetition)" ng-model="selectedCompetition" ng-options="item.fullName + item.region for item in competitions">
         </select>
 
         <div class="section">

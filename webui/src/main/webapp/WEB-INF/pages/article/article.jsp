@@ -29,9 +29,30 @@
 <div class="center-content" ng-controller="articleController">
     <h1>Новая статья</h1>
 
+
     <div class="content">
+        <div id="file-input">
+            <input id="avatar" type="file" multiple accept="image/jpeg,image/png"
+                   onchange="onChangeImage(this.files)">
+            <img id="avatar-image" title="Ваш аватар" alt=""
+                 src="${pageContext.request.contextPath}/resources/images/registration/default-avatar.gif"/>
+        </div>
+        <div class="selected-competition">
+            <select ng-model="selectedCompetition" ng-options="item.text for item in competitions">
+            </select>
+        </div>
+        <div class="news-name">
+            <input placeholder="Название новости" ng-model="newsData.name" id="name" name="name"
+                   maxlength="240">
+        </div>
+        <div class="news-header">
+                <textarea ng-model="newsData.startNewsText" placeholder="Начало новости" maxlength="250"></textarea>
+
+        </div>
+        <h1>Содержание новости</h1>
         <br><br>
         <div id="edit"></div>
+        <input type="button" id="submit" value="Сохранить" class="form-submit" ng-click="save(newsData)">
     </div>
 
 

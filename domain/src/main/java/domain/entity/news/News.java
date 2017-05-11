@@ -34,6 +34,12 @@ public class News {
     @Column(name = "is_blog")
     private Boolean isBlog;
 
+    @Column(name = "main_competition_id")
+    private Integer mainCompetitionId;
+
+    @Column(name = "start_news_text")
+    private String startNewsText;
+
     public News() {
     }
 
@@ -83,5 +89,21 @@ public class News {
 
     public void setBlog(Boolean blog) {
         isBlog = blog;
+    }
+
+    public Integer getMainCompetitionId() {
+        return mainCompetitionId;
+    }
+
+    public void setMainCompetitionId(Integer mainCompetitionId) {
+        this.mainCompetitionId = mainCompetitionId;
+    }
+
+    public String getStartNewsText() {
+        return startNewsText;
+    }
+
+    public void setStartNewsText(String startNewsText) {
+        this.startNewsText = startNewsText;
     }
 }

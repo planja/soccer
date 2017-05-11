@@ -18,6 +18,10 @@ public class NewsViewModel {
 
     private Boolean isBlog;
 
+    private Integer mainCompetitionId;
+
+    private String startNewsText;
+
     public NewsViewModel() {
     }
 
@@ -28,6 +32,8 @@ public class NewsViewModel {
         news.setImage(image == null ? null : new Base64().decode(image));
         news.setBlog(isBlog);
         news.setHtml(html == null ? null : new Base64().decode(html));
+        news.setMainCompetitionId(mainCompetitionId);
+        news.setStartNewsText(startNewsText);
         return news;
     }
 
@@ -37,6 +43,8 @@ public class NewsViewModel {
         this.image = news.getImage() == null ? null : new Base64().encodeAsString(news.getImage());
         this.html = news.getHtml() == null ? null : new Base64().encodeAsString(news.getHtml());
         this.isBlog = news.getBlog();
+        this.mainCompetitionId = news.getMainCompetitionId();
+        this.startNewsText = news.getStartNewsText();
     }
 
     public Long getId() {
@@ -77,5 +85,21 @@ public class NewsViewModel {
 
     public void setBlog(Boolean blog) {
         isBlog = blog;
+    }
+
+    public Integer getMainCompetitionId() {
+        return mainCompetitionId;
+    }
+
+    public void setMainCompetitionId(Integer mainCompetitionId) {
+        this.mainCompetitionId = mainCompetitionId;
+    }
+
+    public String getStartNewsText() {
+        return startNewsText;
+    }
+
+    public void setStartNewsText(String startNewsText) {
+        this.startNewsText = startNewsText;
     }
 }

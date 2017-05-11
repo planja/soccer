@@ -1,6 +1,7 @@
 package webui.controller.teams;
 
 import domain.entity.teams.Competition;
+import domain.entity.teams.MainCompetition;
 import infrastructure.service.common.ICommonService;
 import infrastructure.service.teams.ITeamService;
 import infrastructure.service.user.IUserService;
@@ -11,10 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import webui.viewmodel.common.InfoViewModel;
 
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Никита on 23.04.2017.
@@ -63,8 +67,15 @@ public class TeamsController {
     }
 
     @RequestMapping(value = "/teaminfo/{dbId}", method = RequestMethod.GET)
-    public ModelAndView refSchedule(@PathVariable Long dbId) {
+    public ModelAndView teamInfo(@PathVariable Long dbId) {
         return new ModelAndView("/teams/team-info", "teamId", dbId);
+    }
+
+    @RequestMapping(value = "/maincompetitions", method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public @ResponseBody List<InfoViewModel> mainCompetition() {
+        return Arrays.stream(MainCompetition.values()).map(o -> new InfoViewModel(o.getText(), o.getValue())).collect(Collectors.toList());
+
     }
 
 }
