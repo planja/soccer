@@ -3,6 +3,8 @@ package webui.viewmodel.news;
 import domain.entity.news.News;
 import org.apache.commons.codec.binary.Base64;
 
+import java.security.Principal;
+
 /**
  * Created by ShchykalauM on 10.05.2017.
  */
@@ -16,7 +18,7 @@ public class NewsViewModel {
 
     private String html;
 
-    private Boolean isBlog;
+    private Boolean blog;
 
     private Integer mainCompetitionId;
 
@@ -30,7 +32,7 @@ public class NewsViewModel {
         news.setId(id);
         news.setName(name);
         news.setImage(image == null ? null : new Base64().decode(image));
-        news.setBlog(isBlog);
+        news.setBlog(blog);
         news.setHtml(html == null ? null : new Base64().decode(html));
         news.setMainCompetitionId(mainCompetitionId);
         news.setStartNewsText(startNewsText);
@@ -42,7 +44,7 @@ public class NewsViewModel {
         this.name = news.getName();
         this.image = news.getImage() == null ? null : new Base64().encodeAsString(news.getImage());
         this.html = news.getHtml() == null ? null : new Base64().encodeAsString(news.getHtml());
-        this.isBlog = news.getBlog();
+        this.blog = news.getBlog();
         this.mainCompetitionId = news.getMainCompetitionId();
         this.startNewsText = news.getStartNewsText();
     }
@@ -80,11 +82,11 @@ public class NewsViewModel {
     }
 
     public Boolean getBlog() {
-        return isBlog;
+        return blog;
     }
 
     public void setBlog(Boolean blog) {
-        isBlog = blog;
+        this.blog = blog;
     }
 
     public Integer getMainCompetitionId() {

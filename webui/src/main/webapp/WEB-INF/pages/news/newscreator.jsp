@@ -46,7 +46,7 @@
                    maxlength="240">
         </div>
         <div class="news-header">
-                <textarea ng-model="newsData.startNewsText" placeholder="Начало новости" maxlength="250"></textarea>
+            <textarea ng-model="newsData.startNewsText" placeholder="Начало новости" maxlength="250"></textarea>
 
         </div>
         <h1>Содержание новости</h1>
@@ -70,5 +70,5 @@
 <script src="<c:url value="/resources/js/froala/froala_editor.pkgd.min.js" />"></script>
 <script src="<c:url value="/resources/js/froala/ru.js" />"></script>
 
-<script src="<c:url value="/resources/js/article/article.js" />"></script>
+<script src="<c:url value="/resources/js/news/newscreator.js" />"></script>
 </html>

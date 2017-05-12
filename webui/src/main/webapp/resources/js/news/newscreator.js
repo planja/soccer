@@ -10,7 +10,23 @@ $(function () {
 
 var imageString = null;
 
-function validate(newsData) {
+function validate(newsData, html) {
+    if (newsData.name.length < 5) {
+        notify('topCenter', 'error', 'Длина названия новости должна быть не менее 5 символов');
+        return false;
+    }
+    if (imageString == null) {
+        notify('topCenter', 'error', 'Укажите заглавную картинку новости');
+        return false;
+    }
+    if (newsData.startNewsText.length < 5) {
+        notify('topCenter', 'error', 'Длина заглавия новости должна быть не менее 5 символов');
+        return false;
+    }
+    if (html.length < 5) {
+        notify('topCenter', 'error', 'Введите содержание новости');
+        return false;
+    }
     return true;
 }
 
@@ -49,19 +65,24 @@ soccerApp.controller("articleController",
 
 
         $scope.save = function (newsData) {
-            if (validate(newsData)) {
+            var html = $(".fr-element").first().html();
+            if (validate(newsData, html)) {
 
                 var data = {
                     id: null,
                     name: newsData.name,
                     image: imageString.substring(imageString.indexOf("base64,") + 7),
-                    html: null,
-                    isBlog: true,
+                    html: html,
+                    blog: true,
                     mainCompetitionId: $scope.selectedCompetition.id,
                     startNewsText: newsData.startNewsText
                 };
+                $http.post("/news/savenews", data)
+                    .then(function (data) {
+                        window.location.href = "/news/readnews/" + data.data;
+                    }, function (data) {
 
-                alert('qwe')
+                    });
             }
         };
 
