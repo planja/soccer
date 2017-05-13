@@ -1,15 +1,17 @@
 package webui.controller.news;
 
-import domain.entity.news.News;
+import domain.entity.news.Blog;
 import infrastructure.service.news.INewsService;
 import infrastructure.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import webui.viewmodel.news.NewsViewModel;
+import webui.viewmodel.news.BlogViewModel;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by ShchykalauM on 12.05.2017.
@@ -28,23 +30,39 @@ public class NewsController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/newscreator", method = RequestMethod.GET)
-    public String newsCreator() {
-        return "news/newscreator";
+    @RequestMapping(value = "/createblog", method = RequestMethod.GET)
+    public String createBlog() {
+        return "news/createblog";
     }
 
 
-    @RequestMapping(value = "/savenews", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveblog", method = RequestMethod.POST)
     public
     @ResponseBody
-    Long saveNews(@RequestBody NewsViewModel newsViewModel, Principal principal) {
-        News news = newsService.createNews(newsViewModel.toNews(), userService.findByLogin(principal.getName()));
-        return news.getId();
+    Long saveBlog(@RequestBody BlogViewModel blogViewModel, Principal principal) {
+        Blog blog = newsService.createBlog(blogViewModel.toNews(), userService.findByLogin(principal.getName()));
+        return blog.getId();
     }
 
-    @RequestMapping(value = "/readnews/{id}", method = RequestMethod.GET)
-    public ModelAndView loadNews(@PathVariable Long id) {
-        return new ModelAndView("/news/readnews", "news", new NewsViewModel(newsService.findNews(id)));
+    @RequestMapping(value = "/readblog/{id}", method = RequestMethod.GET)
+    public ModelAndView readBlog(@PathVariable Long id) {
+        Blog blog = newsService.findBlog(id);
+        if (blog != null)
+            return new ModelAndView("/news/readblog", "blogId", id);
+        else return new ModelAndView("/common/notfound");
+    }
+
+    @RequestMapping(value = "/loadblog/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    BlogViewModel loadBlog(@PathVariable Long id) {
+        return new BlogViewModel(newsService.findBlog(id));
+    }
+
+
+    @RequestMapping(value = "/latestblog", method = RequestMethod.GET)
+    public @ResponseBody
+    List<BlogViewModel> latestBlog() {
+        return newsService.findLatestBlog().stream().map(BlogViewModel::new).collect(Collectors.toList());
     }
 
 

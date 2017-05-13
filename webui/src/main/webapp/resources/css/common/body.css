@@ -100,12 +100,12 @@ body {
     width: 28px;
 }
 
-#match-detail{
+#match-detail {
     width: 100%;
     float: left;
 }
 
-#match-detail .home-img{
+#match-detail .home-img {
     margin-top: 24px;
     position: absolute;
     width: 20px;
@@ -113,7 +113,7 @@ body {
     margin-left: -110px;
 }
 
-#match-detail .away-img{
+#match-detail .away-img {
     margin-top: 54px;
     position: absolute;
     width: 20px;
@@ -121,24 +121,24 @@ body {
     margin-left: -110px;
 }
 
-#match-detail .hover:hover{
+#match-detail .hover:hover {
     background-color: rgb(222, 242, 223);
     cursor: hand;
 }
 
-#match-detail .date{
+#match-detail .date {
     width: 34%;
     margin: 5px auto;
 }
 
-#match-detail .l{
+#match-detail .l {
     background: url(/resources/images/common/background1.png) no-repeat scroll -150px 0;
     float: left;
     height: 19px;
     width: 6px;
 }
 
-#match-detail .m{
+#match-detail .m {
     text-align: center;
     background: #FF9E23;
     color: #fff !important;
@@ -148,19 +148,19 @@ body {
     width: 91px;
 }
 
-#match-detail .r{
+#match-detail .r {
     background: url(/resources/images/common/background1.png) no-repeat scroll -159px 0;
     float: left;
     height: 19px;
     width: 6px;
 }
 
-#match-detail .match-info{
+#match-detail .match-info {
     width: 100%;
     height: 80px;
 }
 
-#match-detail .time{
+#match-detail .time {
     margin-top: 30px;
     margin-left: -170px;
     background: transparent url(/resources/images/common/background1.png) no-repeat scroll -216px -21px;
@@ -172,35 +172,36 @@ body {
     width: 50px;
 }
 
-.match-info img{
+.match-info img {
     margin-top: -35px;
     margin-right: 30px;
     float: right;
 }
 
-#match-detail .home-team{
+#match-detail .home-team {
     padding-left: 115px;
     padding-top: 25px;
 }
 
-#match-detail .away-team{
+#match-detail .away-team {
     padding-top: 10px;
     padding-left: 115px
 }
 
-#match-detail a{
+#match-detail a {
     cursor: hand;
     color: #5e5e5e;
 }
 
-#match-detail .home-score{
+#match-detail .home-score {
     margin-top: -50px;
     margin-right: 32px;
     float: right;
     color: #029600;
     font-weight: bold;
 }
-#match-detail .away-score{
+
+#match-detail .away-score {
     margin-right: 32px;
     margin-top: -20px;
     float: right;
@@ -208,7 +209,7 @@ body {
     font-weight: bold;
 }
 
-#table{
+#table {
     float: right;
     display: inline-block;
     margin: 20px 194px 0 20px;
@@ -226,21 +227,21 @@ body {
     height: 44px;
 }
 
-.table-content{
+.table-content {
     margin-top: 13px;
     margin-bottom: 12px;
     width: 100%;
 }
 
-.table-content .name{
+.table-content .name {
     width: 142px;
 }
 
-.table-content a{
-    color:#029600;
+.table-content a {
+    color: #029600;
 }
 
-.table-content .header{
+.table-content .header {
     color: #ffffff;
     font: bold 12px/15px Arial;
     padding: 11px 4px 9px !important;
@@ -251,7 +252,7 @@ body {
     background-color: #f6f6f6;
 }
 
-.table-content td{
+.table-content td {
     color: #5e5e5e;
     font: 12px/14px Arial;
     padding: 4px 3px;
@@ -259,15 +260,15 @@ body {
     text-align: center;
 }
 
-.table-content .team-name{
+.table-content .team-name {
     text-align: left;
 }
 
-.table-content .points{
-    color:#029600;
+.table-content .points {
+    color: #029600;
 }
 
-#table tr.green{
+#table tr.green {
     background-color: #62ca52;
     color: #fff;
     font-weight: bold;
@@ -309,8 +310,6 @@ body {
     width: 28px;
 }
 
-
-
 #tournaments ul.menu {
     padding: 10px 0 0 10px;
 }
@@ -329,7 +328,7 @@ body {
     height: 21px;
 }
 
-#tournaments ul li div div.login-content{
+#tournaments ul li div div.login-content {
     margin-left: 10px;
 }
 
@@ -338,7 +337,7 @@ body {
     cursor: pointer;
 }
 
-#tournaments ul li ul li:hover{
+#tournaments ul li ul li:hover {
     text-decoration: underline;
 }
 
@@ -382,6 +381,53 @@ body {
 
 #tournaments ul li span.france {
     background: url(/resources/images/common/icons.png) no-repeat scroll 0 -128px;
+}
+
+.article {
+    border-bottom: 1px solid #e6e6e6;
+    font: 12px/18px Arial;
+    padding: 15px 10px 15px 10px !important;
+    width: 502px;
+}
+
+.field_image {
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+.article .title {
+    font: bold 14px/22px Arial;
+    margin: -5px 0 0;
+}
+
+.article .title a {
+    color: #66b359;
+}
+
+.article .text {
+    color: #000000;
+    font: 12px/18px Arial;
+    margin: 5px 0 0;
+}
+
+.article .created {
+    padding-top: 7px;
+    clear: left;
+    color: #5e5e5e;
+    font: 12px/18px Arial;
+    width: 100%;
+}
+
+.article .created span.time {
+    background: transparent url(/resources/images/common/bg_crt.png) no-repeat scroll left center;
+    padding-left: 18px;
+}
+
+.article .created span.commentaries {
+    background: transparent url(/resources/images/common/bg_scm.png) no-repeat scroll left 1px;
+    color: #66b359;
+    margin-left: 7px;
+    padding-left: 17px;
 }
 
 

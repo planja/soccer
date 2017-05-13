@@ -7,18 +7,7 @@
 }
 
 
-.form-submit {
-    margin-top: 15px;
-    float: left;
-    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -318px;
-    border: 0 none;
-    color: #fff;
-    cursor: pointer;
-    font: bold 14px/26px Arial;
-    height: 31px;
-    padding: 0 0 2px;
-    width: 145px;
-}
+
 
 .center-content h1 {
     color: #029600;
@@ -35,7 +24,17 @@
     padding-top: 110px;
 }
 
-#edit{
+.form-submit {
+    margin-top: 15px;
+    float: left;
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -318px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 14px/26px Arial;
+    height: 31px;
+    padding: 0 0 2px;
+    width: 145px;
 }
 
 .news-header{

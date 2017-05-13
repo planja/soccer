@@ -66,20 +66,23 @@ soccerApp.controller("articleController",
 
         $scope.save = function (newsData) {
             var html = $(".fr-element").first().html();
+            var before = "<div class=\"fr-element fr-view\">";
+            var after = "</div>";
             if (validate(newsData, html)) {
+                var resultHtml = before + html + after;
 
                 var data = {
                     id: null,
                     name: newsData.name,
                     image: imageString.substring(imageString.indexOf("base64,") + 7),
-                    html: html,
+                    html: resultHtml,
                     blog: true,
                     mainCompetitionId: $scope.selectedCompetition.id,
                     startNewsText: newsData.startNewsText
                 };
-                $http.post("/news/savenews", data)
+                $http.post("/news/saveblog", data)
                     .then(function (data) {
-                        window.location.href = "/news/readnews/" + data.data;
+                        window.location.href = "/news/readblog/" + data.data;
                     }, function (data) {
 
                     });

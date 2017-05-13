@@ -1,0 +1,60 @@
+.center-content {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    min-height: 480px;
+}
+
+.center-content h1 {
+    color: #029600;
+    font: bold 24px/24px Arial;
+    margin: 25px 25px 0 25px;
+}
+
+.content {
+    margin: 15px 25px 25px 25px;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.on-main {
+    float: right;
+    font-size: 12px;
+    color: #66b359;
+    margin-bottom: 25px
+}
+
+.on-main:hover{
+    color: #66b359;
+}
+
+
+.info-gray {
+    background-color: #f6f6f6;
+    clear: both;
+    margin: 0 0 25px;
+    padding: 12px 15px 10px;
+}
+
+.info-gray .node-info {
+    background: transparent url(/resources/images/common/bg_crt.png) no-repeat scroll 0 1px;
+    color: #5e5e5e;
+    font: 12px/18px Arial;
+    margin: 5px 0 0;
+    padding: 0 0 0 25px;
+}
+
+.ref{
+    color: #66b359;
+}
+
+.ref:hover{
+    color: #66b359;
+}
+
+.author{
+    color: #66b359;
+}

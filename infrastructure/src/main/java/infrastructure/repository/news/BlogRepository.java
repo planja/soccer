@@ -1,11 +1,13 @@
 package infrastructure.repository.news;
 
-import domain.entity.news.News;
+import domain.entity.news.Blog;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
  */
-public interface NewsRepository extends JpaRepository<News, Long> {
+public interface BlogRepository extends JpaRepository<Blog, Long> {
 
 }

@@ -1,12 +1,16 @@
 package infrastructure.service.news;
 
-import domain.entity.news.News;
+import domain.entity.news.Blog;
 import domain.entity.user.User;
-import infrastructure.repository.news.NewsRepository;
+import infrastructure.repository.news.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.security.Principal;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
@@ -14,21 +18,28 @@ import java.security.Principal;
 @Service
 public class NewsService implements INewsService {
 
-    private final NewsRepository newsRepository;
+    private final BlogRepository blogRepository;
 
     @Autowired
-    public NewsService(NewsRepository newsRepository) {
-        this.newsRepository = newsRepository;
+    public NewsService(BlogRepository blogRepository) {
+        this.blogRepository = blogRepository;
     }
 
-    public News createNews(News news, User user) {
-        news.setUser(user);
-        return newsRepository.save(news);
+    public Blog createBlog(Blog blog, User user) {
+        blog.setUser(user);
+        blog.setDate(new Date());
+        return blogRepository.save(blog);
 
     }
 
     @Override
-    public News findNews(Long id) {
-        return newsRepository.findOne(id);
+    public Blog findBlog(Long id) {
+        return blogRepository.findOne(id);
+    }
+
+    @Override
+    public List<Blog> findLatestBlog() {
+        Page<Blog> blogs = blogRepository.findAll(new PageRequest(0, 10, Sort.Direction.DESC, "id"));
+        return blogs.getContent();
     }
 }

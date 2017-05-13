@@ -51,6 +51,7 @@
 }
 
 #user-profile div div div input {
+    padding-left: 10px;
     border-radius: 7px;
     height: 35px;
     float: left;

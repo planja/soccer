@@ -21,6 +21,16 @@
     </t:news>
 
     <div id="middle-news">
+        <div class="article" ng-repeat="blog in blogs">
+            <div class="field_image">
+                <img class="home-img" src="{{blog.image}}">
+            </div>
+            <div class="title"><a href="/news/readblog/{{blog.id}}">{{blog.name}}</a></div>
+            <div class="text">{{blog.startNewsText}}</div>
+            <div class="created"><span class="time">{{blog.date}}</span>
+                <span class="commentaries">Комментариев:38</span>
+            </div>
+        </div>
     </div>
 
     <t:matches-result>
@@ -41,3 +51,4 @@
 </body>
 <script src="<c:url value="/resources/js/common/index.js" />"></script>
 </html>
+

@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Новая статья</title>
-    <link rel="stylesheet" href="<c:url value="/resources/css/article/article.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/news/createblog.css" />">
 
     <link rel="stylesheet" href="<c:url value="/resources/css/froala/font-awesome.min.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/froala/codemirror.min.css" />">
@@ -70,5 +70,5 @@
 <script src="<c:url value="/resources/js/froala/froala_editor.pkgd.min.js" />"></script>
 <script src="<c:url value="/resources/js/froala/ru.js" />"></script>
 
-<script src="<c:url value="/resources/js/news/newscreator.js" />"></script>
+<script src="<c:url value="/resources/js/news/createblog.js" />"></script>
 </html>

@@ -3,14 +3,15 @@ package domain.entity.news;
 import domain.entity.user.User;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
  */
 
 @Entity
-@Table(name = "news")
-public class News {
+@Table(name = "blogs")
+public class Blog {
 
 
     @Id
@@ -25,14 +26,11 @@ public class News {
     private byte[] image;
 
     @Column(name = "html")
-    private byte[] html;
+    private String html;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
-
-    @Column(name = "is_blog")
-    private Boolean isBlog;
 
     @Column(name = "main_competition_id")
     private Integer mainCompetitionId;
@@ -40,7 +38,11 @@ public class News {
     @Column(name = "start_news_text")
     private String startNewsText;
 
-    public News() {
+    @Column(name = "date", columnDefinition = "DATETIME")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
+
+    public Blog() {
     }
 
     public Long getId() {
@@ -67,11 +69,11 @@ public class News {
         this.image = image;
     }
 
-    public byte[] getHtml() {
+    public String getHtml() {
         return html;
     }
 
-    public void setHtml(byte[] html) {
+    public void setHtml(String html) {
         this.html = html;
     }
 
@@ -81,14 +83,6 @@ public class News {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Boolean getBlog() {
-        return isBlog;
-    }
-
-    public void setBlog(Boolean blog) {
-        isBlog = blog;
     }
 
     public Integer getMainCompetitionId() {
@@ -105,5 +99,13 @@ public class News {
 
     public void setStartNewsText(String startNewsText) {
         this.startNewsText = startNewsText;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

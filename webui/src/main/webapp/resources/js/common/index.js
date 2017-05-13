@@ -8,6 +8,8 @@ soccerApp.controller("indexController",
         $scope.pastMatches = [];
         $scope.futureMatches = [];
 
+        $scope.blogs = [];
+
         $scope.loadTournament = function () {
             var requestParams = {
                 key: apiKey,
@@ -25,6 +27,28 @@ soccerApp.controller("indexController",
                     });
                 })
         };
+
+        $scope.loadBlog = function () {
+            $http.get("/news/latestblog")
+                .then(function (data) {
+                    $scope.blogs = data.data;
+                    $.each($scope.blogs, function (index, value) {
+                        value.image = "data:image/png;base64," + value.image;
+                        var blogDate = new Date(value.date);
+                        var date = blogDate.toLocaleString('ru', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric'
+                        });
+                        var d = date.substring(0, date.indexOf('г') - 1);
+                        var t = date.substring(date.indexOf('г') + 3, date.length);
+                        value.date = d + t;
+                    })
+                })
+        };
+
 
         $scope.loadMatches = function () {
             var requestParams = {
@@ -62,4 +86,5 @@ soccerApp.controller("indexController",
         };
         $scope.loadMatches();
         $scope.loadTournament();
+        $scope.loadBlog();
     });

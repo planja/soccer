@@ -1,17 +1,19 @@
 package infrastructure.service.news;
 
-import domain.entity.news.News;
+import domain.entity.news.Blog;
 import domain.entity.user.User;
 
-import java.security.Principal;
+import java.util.List;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
  */
 public interface INewsService {
 
-    News createNews(News news, User user);
+    Blog createBlog(Blog blog, User user);
 
-    News findNews(Long id);
+    Blog findBlog(Long id);
+
+    List<Blog> findLatestBlog();
 
 }
