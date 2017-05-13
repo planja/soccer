@@ -65,5 +65,11 @@ public class NewsController {
         return newsService.findLatestBlog().stream().map(BlogViewModel::new).collect(Collectors.toList());
     }
 
+    @RequestMapping(value = "/readmoreblogs/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    List<BlogViewModel> readMoreBlogs(@PathVariable Long id) {
+        return newsService.findBlogForReadMore(id).stream().map(BlogViewModel::new).collect(Collectors.toList());
+    }
+
 
 }

@@ -395,7 +395,13 @@ body {
     margin: 0 15px 0 0;
 }
 
+.home-img{
+    width: 100px;
+    height: 76px;
+}
+
 .article .title {
+    word-wrap:break-word;
     font: bold 14px/22px Arial;
     margin: -5px 0 0;
 }
@@ -405,6 +411,7 @@ body {
 }
 
 .article .text {
+    word-wrap:break-word;
     color: #000000;
     font: 12px/18px Arial;
     margin: 5px 0 0;

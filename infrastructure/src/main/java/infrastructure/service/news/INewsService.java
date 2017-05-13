@@ -16,4 +16,6 @@ public interface INewsService {
 
     List<Blog> findLatestBlog();
 
+    List<Blog> findBlogForReadMore(Long id);
+
 }

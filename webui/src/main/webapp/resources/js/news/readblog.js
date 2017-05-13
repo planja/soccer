@@ -7,6 +7,8 @@ soccerApp.controller("blogController",
         $scope.blog = {};
         $scope.html = "";
 
+        $scope.blogs = [];
+
         $scope.loadBlog = function () {
             $http.get("/news/loadblog/" + blogId)
                 .then(function (data) {
@@ -26,6 +28,16 @@ soccerApp.controller("blogController",
                 })
         };
 
+        $scope.readMode = function () {
+            $http.get("/news/readmoreblogs/" + blogId)
+                .then(function (data) {
+                    $scope.blogs = data.data;
+                    $.each($scope.blogs, function (index, value) {
+                        value.image = "data:image/png;base64," + value.image;
+                    })
+                })
+        };
+        $scope.readMode();
         $scope.loadBlog();
 
     });

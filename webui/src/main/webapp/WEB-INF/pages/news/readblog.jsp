@@ -37,7 +37,24 @@
 
 
             <div data-ng-bind-html="html"></div>
-            <a class="on-main" href="/">На главную</a>
+            <div class="div-on-main">
+                <a class="on-main" href="/">На главную</a>
+            </div>
+            <div class="read-more" style="">Читать далее</div>
+
+
+
+
+        </div>
+        <div>
+            <div ng-repeat="blog in blogs">
+                <div class="image-div">
+                    <img class="read-more-image" src="{{blog.image}}">
+                </div>
+            </div>
+            <a href="/news/readblog/{{blog.id}}" ng-repeat="blog in blogs">
+                <span class="read-more-header">{{blog.name}}</span>
+            </a>
         </div>
     </div>
 

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
@@ -41,5 +43,14 @@ public class NewsService implements INewsService {
     public List<Blog> findLatestBlog() {
         Page<Blog> blogs = blogRepository.findAll(new PageRequest(0, 10, Sort.Direction.DESC, "id"));
         return blogs.getContent();
+    }
+
+    @Override
+    public List<Blog> findBlogForReadMore(Long id) {
+        Page<Blog> blogs = blogRepository.findAll(new PageRequest(0, 10, Sort.Direction.DESC, "id"));
+        List<Blog> result = blogs.getContent().stream()
+                .filter(o -> !Objects.equals(o.getId(), id)).collect(Collectors.toList());
+        int size = result.size() - 1;
+        return size >= 4 ? result.subList(0, 4) : result.subList(0, size);
     }
 }
