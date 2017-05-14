@@ -22,9 +22,50 @@
 </t:news>
 
 <div class="center-content" ng-controller="tableController">
-    <h1>Турнирная таблица</h1>
+    <h1 id="selectedCompetition" style="display: none">Турнирная таблица {{selectedCompetition.fullName}}
+        {{selectedCompetition.region}}</h1>
 
     <div class="content">
+        <div>
+            <img ng-src="{{selectedCompetition.flagUrl}}">
+        </div>
+        <select ng-change="changeTeams(selectedCompetition)" ng-model="selectedCompetition" ng-options="item.fullName + item.region for item in competitions">
+        </select>
+
+        <table class="table" ng-repeat="tournament in tournamentsData">
+            <tr class="green">
+                <th class="header"></th>
+                <th class="name header">{{tournament.round.name}}</th>
+                <th class="header">И</th>
+                <th class="header">В</th>
+                <th class="header">Н</th>
+                <th class="header">П</th>
+                <th class="header">Мячи</th>
+                <th class="header">О</th>
+            </tr>
+            <tr class="border" ng-repeat="team in tournament.leagueTable">
+                <td ng-if="team.index%2==0">{{team.index+1}}</td>
+                <td ng-if="team.index%2==0" class="team-name"><a href="/teams/teaminfo/{{team.dbid}}" title="{{team.name}}">{{team.name}}</a></td>
+                <td ng-if="team.index%2==0">{{team.gamesPlayed}}</td>
+                <td ng-if="team.index%2==0">{{team.wins}}</td>
+                <td ng-if="team.index%2==0">{{team.draws}}</td>
+                <td ng-if="team.index%2==0">{{team.losses}}</td>
+                <td ng-if="team.index%2==0">{{team.goalsFor}}:{{team.goalsAgainst}}</td>
+                <td ng-if="team.index%2==0" class="points">{{team.points}}</td>
+
+
+
+                <td ng-if="team.index%2==1" class="color">{{team.index+1}}</td>
+                <td ng-if="team.index%2==1" class="color team-name"><a href="/teams/teaminfo/{{team.dbid}}" title="{{team.name}}">{{team.name}}</a></td>
+                <td ng-if="team.index%2==1" class="color">{{team.gamesPlayed}}</td>
+                <td ng-if="team.index%2==1" class="color">{{team.wins}}</td>
+                <td ng-if="team.index%2==1" class="color">{{team.draws}}</td>
+                <td ng-if="team.index%2==1" class="color">{{team.losses}}</td>
+                <td ng-if="team.index%2==1" class="color">{{team.goalsFor}}:{{team.goalsAgainst}}</td>
+                <td ng-if="team.index%2==1" class="color points">{{team.points}}</td>
+            </tr>
+        </table>
+
     </div>
 
 

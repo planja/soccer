@@ -15,3 +15,66 @@
 .content {
     margin: 0 25px 25px 25px;
 }
+
+select {
+    height: 35px;
+    width: 354px;
+    border-color: green;
+    background: #f6f6f6 url(/resources/images/common/bg_sel.png) no-repeat scroll right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    padding-left: 15px;
+}
+
+.table {
+    margin-top: 13px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.table .name {
+    width: 142px;
+}
+
+.table a {
+    color: #029600;
+}
+
+.table a:hover {
+    color: #029600;
+}
+
+.table .header {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 11px 4px 9px !important;
+    text-align: center;
+}
+
+.table .color {
+    background-color: #f6f6f6;
+}
+
+.table td {
+    color: #000000;
+    padding: 4px 3px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.table .team-name {
+    text-align: left;
+}
+
+.table .points {
+    color: #029600;
+}
+
+.green{
+    background: url(/resources/images/common/bg_block_head.png) repeat scroll 0 0;
+}
+
