@@ -15,3 +15,90 @@
 .content {
     margin: 0 25px 25px 25px;
 }
+
+select {
+    height: 35px;
+    width: 354px;
+    border-color: green;
+    background: #f6f6f6 url(/resources/images/common/bg_sel.png) no-repeat scroll right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    padding-left: 15px;
+}
+
+td {
+    border: 1px solid #e4e3e3 !important;
+}
+
+.time {
+    width: 100px;
+    height: 42px;
+    text-align: center;
+}
+
+.left {
+    padding-left: 10px;
+    text-align: left;
+    width: 308px;
+}
+
+.left a {
+    color: #000000;
+}
+
+.left a:hover {
+    color: #000000;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    width: 100px;
+
+}
+
+.result a {
+    color: #029600;
+    text-decoration: underline;
+    cursor: hand;
+}
+
+.result a:hover {
+    color: #029600;
+    cursor: hand;
+}
+
+.right {
+    padding-right: 10px;
+    text-align: right;
+    width: 308px;
+}
+
+.right a {
+    color: #000000;
+}
+
+.right a:hover {
+    color: #000000;
+}
+
+.date {
+    height: 40px;
+    background-color: #ffffff;
+    color: #029600;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    text-align: center;
+}
+
+.table-data {
+    margin-top: 20px;
+}
+
+.future-match{
+    width: 20px;
+}
