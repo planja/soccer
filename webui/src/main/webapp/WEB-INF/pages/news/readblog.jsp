@@ -43,18 +43,18 @@
             <div class="read-more" style="">Читать далее</div>
 
 
-
-
         </div>
         <div>
             <div ng-repeat="blog in blogs">
-                <div class="image-div">
-                    <img class="read-more-image" src="{{blog.image}}">
+                <div class="img-with-text">
+                    <img src="{{blog.image}}"/>
+                    <a href="/news/readblog/{{blog.id}}">
+                        <span class="read-more-header">{{blog.name}}</span>
+                    </a>
                 </div>
+
+
             </div>
-            <a href="/news/readblog/{{blog.id}}" ng-repeat="blog in blogs">
-                <span class="read-more-header">{{blog.name}}</span>
-            </a>
         </div>
     </div>
 

@@ -18,4 +18,6 @@ public interface INewsService {
 
     List<Blog> findBlogForReadMore(Long id);
 
+    List<Blog> findAllBlogs();
+
 }

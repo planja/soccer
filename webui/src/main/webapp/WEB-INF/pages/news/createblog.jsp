@@ -34,7 +34,7 @@
         <div id="file-input">
             <input id="avatar" type="file" multiple accept="image/jpeg,image/png"
                    onchange="onChangeImage(this.files)">
-            <img id="avatar-image" title="Ваш аватар" alt=""
+            <img id="avatar-image" title="Заглавная картинка" alt=""
                  src="${pageContext.request.contextPath}/resources/images/registration/default-avatar.gif"/>
         </div>
         <div class="selected-competition">

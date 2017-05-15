@@ -53,22 +53,37 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/loadblog/{id}", method = RequestMethod.GET)
-    public @ResponseBody
+    public
+    @ResponseBody
     BlogViewModel loadBlog(@PathVariable Long id) {
         return new BlogViewModel(newsService.findBlog(id));
     }
 
 
     @RequestMapping(value = "/latestblog", method = RequestMethod.GET)
-    public @ResponseBody
+    public
+    @ResponseBody
     List<BlogViewModel> latestBlog() {
         return newsService.findLatestBlog().stream().map(BlogViewModel::new).collect(Collectors.toList());
     }
 
     @RequestMapping(value = "/readmoreblogs/{id}", method = RequestMethod.GET)
-    public @ResponseBody
+    public
+    @ResponseBody
     List<BlogViewModel> readMoreBlogs(@PathVariable Long id) {
         return newsService.findBlogForReadMore(id).stream().map(BlogViewModel::new).collect(Collectors.toList());
+    }
+
+    @RequestMapping(value = "/allblogs", method = RequestMethod.GET)
+    public String allBlogs() {
+        return "news/allblogs";
+    }
+
+    @RequestMapping(value = "/findallblogs", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<BlogViewModel> findAllBlogs() {
+        return newsService.findAllBlogs().stream().map(BlogViewModel::new).collect(Collectors.toList());
     }
 
 

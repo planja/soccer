@@ -50,7 +50,12 @@ public class NewsService implements INewsService {
         Page<Blog> blogs = blogRepository.findAll(new PageRequest(0, 10, Sort.Direction.DESC, "id"));
         List<Blog> result = blogs.getContent().stream()
                 .filter(o -> !Objects.equals(o.getId(), id)).collect(Collectors.toList());
-        int size = result.size() - 1;
+        int size = result.size();
         return size >= 4 ? result.subList(0, 4) : result.subList(0, size);
+    }
+
+    @Override
+    public List<Blog> findAllBlogs() {
+        return blogRepository.findAll();
     }
 }

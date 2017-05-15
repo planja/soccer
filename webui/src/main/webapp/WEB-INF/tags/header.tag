@@ -94,6 +94,9 @@
             <li>
                 <a href="${pageContext.request.contextPath}/teams/table" title="Турнирная таблица">Турнирная таблица</a>
             </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/news/allblogs" title="Статьи">Статьи</a>
+            </li>
             <c:if test="${pageContext.request.isUserInRole('BLOGGER')||pageContext.request.isUserInRole('ADMIN')}">
                 <li>
                     <a href="${pageContext.request.contextPath}/news/createblog" title="Новая статья">Новая статья</a>
