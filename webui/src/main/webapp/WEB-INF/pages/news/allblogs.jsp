@@ -12,6 +12,7 @@
 <head>
     <title>Статьи</title>
     <link rel="stylesheet" href="<c:url value="/resources/css/news/allblogs.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-combined.min.css" />">
 </head>
 <body>
 <t:header>
@@ -27,12 +28,13 @@
             <br>
             <span class="select-category">Выберите категорию</span>
             <div class="selected-competition">
-                <select ng-model="selectedCompetition" ng-options="item.text for item in competitions">
+                <select ng-change="change(selectedCompetition)" ng-model="selectedCompetition"
+                        ng-options="item.text for item in competitions">
                 </select>
             </div>
 
             <br>
-            <div class="article-all" ng-repeat="blog in blogs">
+            <div class="article-all" ng-repeat="blog in filteredBlogs">
                 <div class="field_image-all">
                     <img class="home-img-all" src="{{blog.image}}">
                 </div>
@@ -42,6 +44,10 @@
                     <span class="commentaries-all">Комментариев:38</span>
                 </div>
             </div>
+
+            <div data-pagination="" data-num-pages="numPages()"
+                 data-current-page="currentPage" data-max-size="maxSize"
+                 data-boundary-links="true"></div>
 
         </div>
     </div>
@@ -56,6 +62,7 @@
 
 
 </body>
+<script src="<c:url value="/resources/js/common/ui-bootstrap-tpls-0.3.0.min.js" />"></script>
 <script src="<c:url value="/resources/js/news/allblogs.js" />"></script>
 </html>
 

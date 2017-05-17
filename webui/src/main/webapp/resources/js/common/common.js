@@ -2,7 +2,7 @@
  * Created by ShchykalauM on 21.02.2017.
  */
 
-var soccerApp = angular.module("soccerApp", []);
+var soccerApp = angular.module("soccerApp", ['ui.bootstrap']);
 
 var apiKey = "2b540c29c8394bd2aae779960d4fa5b5";
 
