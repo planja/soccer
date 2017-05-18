@@ -10,10 +10,47 @@ soccerApp.controller("indexController",
 
         $scope.blogs = [];
 
-        $scope.loadTournament = function () {
+
+        $scope.competitions = [];
+        $scope.selectedCompetition = {};
+
+        $scope.getCompetitions = function () {
+
+            var teamIndex = 0;
+            $http.get("/teams/getcompetitions")
+                .then(function (data) {
+                    $scope.competitions = data.data;
+                    $.each($scope.competitions, function (index, value) {
+                        if (value.dbId == 36)
+                            teamIndex = index;
+                        value.region = " (" + value.region + ")";
+                    });
+                    $scope.selectedCompetition = $scope.competitions[teamIndex];
+
+                    $("#selectedCompetition").css("display", "");
+
+                    $scope.loadMatches($scope.selectedCompetition.dbId);
+                    $scope.loadTournament($scope.selectedCompetition.dbId);
+                }, function (data) {
+                });
+        };
+
+        $scope.changeTeams = function (selectedCompetition) {
+            $scope.tournamentsData = [];
+            $scope.matches = [];
+            $scope.pastMatches = [];
+            $scope.futureMatches = [];
+            $scope.loadMatches(selectedCompetition.dbId);
+            $scope.loadTournament(selectedCompetition.dbId);
+        };
+
+        $scope.getCompetitions();
+
+
+        $scope.loadTournament = function (id) {
             var requestParams = {
                 key: apiKey,
-                url: apiUrl + "league-tables?competition_id=36"
+                url: apiUrl + "league-tables?competition_id=" + id
             };
             $http.post("/getapidata", requestParams)
                 .then(function (data) {
@@ -50,10 +87,10 @@ soccerApp.controller("indexController",
         };
 
 
-        $scope.loadMatches = function () {
+        $scope.loadMatches = function (id) {
             var requestParams = {
                 key: apiKey,
-                url: apiUrl + "matches?competition_id=36"
+                url: apiUrl + "matches?competition_id=" + id
             };
             $http.post("/getapidata", requestParams)
                 .then(function (data) {
@@ -67,8 +104,10 @@ soccerApp.controller("indexController",
                             day: 'numeric'
                         });
                         value.date = date;
-                        value.minutes = matchDate.getMinutes();
-                        value.hours = matchDate.getHours();
+                        var minutes = matchDate.getMinutes().toString();
+                        var hours = matchDate.getHours().toString();
+                        value.minutes = minutes.length == 1 ? "0" + minutes : minutes;
+                        value.hours = hours.length == 1 ? "0" + hours : hours;
                         if (time <= value.start) {
                             $scope.futureMatches.push(value);
                         } else {
@@ -84,7 +123,6 @@ soccerApp.controller("indexController",
                     $scope.pastMatches = $scope.pastMatches.reverse();
                 })
         };
-        $scope.loadMatches();
-        $scope.loadTournament();
+
         $scope.loadBlog();
     });
