@@ -1,8 +1,10 @@
 package infrastructure.service.news;
 
 import domain.entity.news.Blog;
+import domain.entity.news.News;
 import domain.entity.user.User;
 import infrastructure.repository.news.BlogRepository;
+import infrastructure.repository.news.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,9 +24,12 @@ public class NewsService implements INewsService {
 
     private final BlogRepository blogRepository;
 
+    private final NewsRepository newsRepository;
+
     @Autowired
-    public NewsService(BlogRepository blogRepository) {
+    public NewsService(BlogRepository blogRepository, NewsRepository newsRepository) {
         this.blogRepository = blogRepository;
+        this.newsRepository = newsRepository;
     }
 
     public Blog createBlog(Blog blog, User user) {
@@ -57,5 +62,18 @@ public class NewsService implements INewsService {
     @Override
     public List<Blog> findAllBlogs() {
         return blogRepository.findAll();
+    }
+
+
+    @Override
+    public News createNews(News news, User user) {
+        news.setUser(user);
+        news.setDate(new Date());
+        return newsRepository.save(news);
+    }
+
+    @Override
+    public News findNews(Long id) {
+        return newsRepository.findOne(id);
     }
 }

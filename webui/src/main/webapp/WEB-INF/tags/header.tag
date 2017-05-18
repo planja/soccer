@@ -102,6 +102,11 @@
                     <a href="${pageContext.request.contextPath}/news/createblog" title="Новая статья">Новая статья</a>
                 </li>
             </c:if>
+            <c:if test="${pageContext.request.isUserInRole('BLOGGER')||pageContext.request.isUserInRole('ADMIN')}">
+                <li>
+                    <a href="${pageContext.request.contextPath}/news/createnews" title="Новая статья">Новая новость</a>
+                </li>
+            </c:if>
             <c:if test="${pageContext.request.isUserInRole('ADMIN')}">
                 <li>
                     <a href="${pageContext.request.contextPath}/admin" title="Панель администратора">Панель администратора</a>

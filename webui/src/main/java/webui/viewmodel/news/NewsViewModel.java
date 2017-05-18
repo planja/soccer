@@ -1,20 +1,17 @@
 package webui.viewmodel.news;
 
-import domain.entity.news.Blog;
-import org.apache.commons.codec.binary.Base64;
+import domain.entity.news.News;
 
 import java.util.Date;
 
 /**
- * Created by ShchykalauM on 10.05.2017.
+ * Created by ShchykalauM on 18.05.2017.
  */
-public class BlogViewModel {
+public class NewsViewModel {
 
     private Long id;
 
     private String name;
-
-    private String image;
 
     private String html;
 
@@ -26,29 +23,31 @@ public class BlogViewModel {
 
     private String authorName;
 
-    public BlogViewModel() {
+    private boolean mainNews;
+
+    public NewsViewModel() {
     }
 
-    public Blog toNews() {
-        Blog blog = new Blog();
-        blog.setId(id);
-        blog.setName(name);
-        blog.setImage(image == null ? null : new Base64().decode(image));
-        blog.setHtml(html);
-        blog.setMainCompetitionId(mainCompetitionId);
-        blog.setStartNewsText(startNewsText);
-        return blog;
+    public News toNews() {
+        News news = new News();
+        news.setId(this.id);
+        news.setName(this.name);
+        news.setHtml(this.html);
+        news.setMainCompetitionId(this.mainCompetitionId);
+        news.setStartNewsText(this.startNewsText);
+        news.setMainNews(this.mainNews);
+        return news;
     }
 
-    public BlogViewModel(Blog blog) {
-        this.id = blog.getId();
-        this.name = blog.getName();
-        this.image = blog.getImage() == null ? null : new Base64().encodeAsString(blog.getImage());
-        this.html = blog.getHtml();
-        this.mainCompetitionId = blog.getMainCompetitionId();
-        this.startNewsText = blog.getStartNewsText();
-        this.date = blog.getDate();
-        this.authorName = blog.getUser() != null ? blog.getUser().getName() : "Неизвестен";
+    public NewsViewModel(News news) {
+        this.id = news.getId();
+        this.name = news.getName();
+        this.html = news.getHtml();
+        this.mainCompetitionId = news.getMainCompetitionId();
+        this.startNewsText = news.getStartNewsText();
+        this.date = news.getDate();
+        this.authorName = news.getUser() != null ? news.getUser().getName() : "Неизвестен";
+        this.mainNews = news.getMainNews();
     }
 
     public Long getId() {
@@ -65,14 +64,6 @@ public class BlogViewModel {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getHtml() {
@@ -113,5 +104,13 @@ public class BlogViewModel {
 
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
+    }
+
+    public boolean getMainNews() {
+        return mainNews;
+    }
+
+    public void setMainNews(boolean mainNews) {
+        this.mainNews = mainNews;
     }
 }

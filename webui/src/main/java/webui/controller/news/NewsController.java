@@ -1,6 +1,7 @@
 package webui.controller.news;
 
 import domain.entity.news.Blog;
+import domain.entity.news.News;
 import infrastructure.service.news.INewsService;
 import infrastructure.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import webui.viewmodel.news.BlogViewModel;
+import webui.viewmodel.news.NewsViewModel;
 
 import java.security.Principal;
 import java.util.List;
@@ -84,6 +86,36 @@ public class NewsController {
     @ResponseBody
     List<BlogViewModel> findAllBlogs() {
         return newsService.findAllBlogs().stream().map(BlogViewModel::new).collect(Collectors.toList());
+    }
+
+    /*****************Статьи************************/
+    @RequestMapping(value = "/createnews", method = RequestMethod.GET)
+    public String createNews() {
+        return "news/createnews";
+    }
+
+
+    @RequestMapping(value = "/savenews", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    Long saveNews(@RequestBody NewsViewModel newsViewModel, Principal principal) {
+        News news = newsService.createNews(newsViewModel.toNews(), userService.findByLogin(principal.getName()));
+        return news.getId();
+    }
+
+    @RequestMapping(value = "/readnews/{id}", method = RequestMethod.GET)
+    public ModelAndView readNews(@PathVariable Long id) {
+        News news = newsService.findNews(id);
+        if (news != null)
+            return new ModelAndView("/news/readnews", "newsId", id);
+        else return new ModelAndView("/common/notfound");
+    }
+
+    @RequestMapping(value = "/loadnews/{id}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    NewsViewModel loadNews(@PathVariable Long id) {
+        return new NewsViewModel(newsService.findNews(id));
     }
 
 

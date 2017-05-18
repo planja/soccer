@@ -1,0 +1,149 @@
+.center-content {
+    margin: 20px 0 0 20px;
+    float: left;
+    width: 825px;
+    background-color: #ffffff;
+    min-height: 480px;
+}
+
+
+
+
+.center-content h1 {
+    color: #029600;
+    font: bold 24px/24px Arial;
+    margin: 25px 25px 0 25px;
+}
+
+.content {
+    margin: 15px 25px 25px 25px;
+}
+
+.content h1{
+    margin-left: 0;
+    padding-top: 110px;
+}
+
+.form-submit {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    float: left;
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -318px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 14px/26px Arial;
+    height: 31px;
+    padding: 0 0 2px;
+    width: 145px;
+}
+
+.news-header{
+    float: left;
+    margin-top: 12px;
+}
+
+.selected-competition{
+    float: left;
+}
+
+.news-header textarea{
+    width: 651px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    padding-left: 10px;
+}
+
+.news-name{
+    float: left;
+    margin-left: 20px;
+}
+
+.news-name input{
+    padding-left: 10px;
+    border-radius: 7px;
+    height: 35px;
+    width: 431px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.news-name input:focus {
+    border: 3px solid #4da23f;
+}
+
+
+
+select {
+    height: 35px;
+    width: 200px;
+    border-color: green;
+    background: #f6f6f6 url(/resources/images/common/bg_sel.png) no-repeat scroll right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    padding-left: 15px;
+}
+
+.is-main-news{
+    margin-top: 10px;
+    float: left;
+}
+
+.is-main-news label{
+    color: #029600;
+}
+
+.radio {
+    vertical-align: top;
+    width: 17px;
+    height: 17px;
+    margin: 0 3px 0 0;
+}
+.radio + label {
+    cursor: pointer;
+}
+.radio:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+.radio:not(checked) + label {
+    position: relative;
+    padding: 0 0 0 35px;
+}
+.radio:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #CDD1DA;
+    border-radius: 50%;
+    background: #FFF;
+}
+.radio:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #9FD468;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+    opacity: 0;
+    transition: all .2s;
+}
+.radio:checked + label:after {
+    opacity: 1;
+}
+

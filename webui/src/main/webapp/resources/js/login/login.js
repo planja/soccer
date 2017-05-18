@@ -36,6 +36,12 @@ soccerApp.controller("loginController",
                             };
                         } else if (data.data.indexOf("/resources/css/admin/admin.css") != -1) {
                             window.location.href = "/admin";
+                        }
+                        else if (data.data.indexOf("/resources/css/news/createblog.css") != -1) {
+                            window.location.href = "/news/createblog";
+                        }
+                        else if (data.data.indexOf("/resources/css/news/createnews.css") != -1) {
+                            window.location.href = "/news/createnews";
                         } else window.location.href = "/";
                     }, function (data) {
                         if (data.data.indexOf("<title>Доступ запрещён</title>") != -1)

@@ -8,46 +8,25 @@ $(function () {
     })
 });
 
-var imageString = null;
 
 function validate(newsData, html) {
     if (!newsData.name || newsData.name.length < 5) {
-        notify('topCenter', 'error', 'Длина названия статьи должна быть не менее 5 символов');
-        return false;
-    }
-    if (imageString == null) {
-        notify('topCenter', 'error', 'Укажите заглавную картинку статьи');
+        notify('topCenter', 'error', 'Длина названия новости должна быть не менее 5 символов');
         return false;
     }
     if (!newsData.startNewsText || newsData.startNewsText.length < 5) {
-        notify('topCenter', 'error', 'Длина заглавия статьи должна быть не менее 5 символов');
+        notify('topCenter', 'error', 'Длина заглавия новости должна быть не менее 5 символов');
         return false;
     }
     if (html.length <= 11) {
-        notify('topCenter', 'error', 'Введите содержание статьи');
+        notify('topCenter', 'error', 'Введите содержание новости');
         return false;
     }
     return true;
 }
 
-function onChangeImage(files) {
-    if (files.length != 0) {
-        var fileReader = new FileReader();
-        fileReader.addEventListener("load", function (e) {
-            var image = document.getElementById("avatar-image");
-            image.src = e.target.result;
-            image.height = 89;
-            image.width = 100;
-            imageString = e.target.result;
-        });
-
-        fileReader.readAsDataURL(files[files.length - 1]);
-    }
-}
-
-
-soccerApp.controller("articleController",
-    function ArticleController($scope, $http) {
+soccerApp.controller("newsController",
+    function NewsController($scope, $http) {
 
         $scope.competitions = [];
         $scope.selectedCompetition = {};
@@ -70,19 +49,19 @@ soccerApp.controller("articleController",
             var after = "</div>";
             if (validate(newsData, html)) {
                 var resultHtml = before + html + after;
+                var isMainNews = $("#radio")[0].className;
 
                 var data = {
                     id: null,
                     name: newsData.name,
-                    image: imageString.substring(imageString.indexOf("base64,") + 7),
                     html: resultHtml,
-                    blog: true,
                     mainCompetitionId: $scope.selectedCompetition.id,
-                    startNewsText: newsData.startNewsText
+                    startNewsText: newsData.startNewsText,
+                    mainNews: isMainNews.indexOf("ng-not-empty") != -1
                 };
-                $http.post("/news/saveblog", data)
+                $http.post("/news/savenews", data)
                     .then(function (data) {
-                        window.location.href = "/news/readblog/" + data.data;
+                        window.location.href = "/news/readnews/" + data.data;
                     }, function (data) {
 
                     });

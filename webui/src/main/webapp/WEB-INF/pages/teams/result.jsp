@@ -47,7 +47,7 @@
                         <a href="${pageContext.request.contextPath}/teams/teaminfo/{{match.homeTeam.dbid}}">{{match.homeTeam.name}}</a>
                     </td>
                     <td class="result">
-                        <a ng-if="match.isResult">{{match.homeGoals}}:{{match.awayGoals}}</a>
+                        <span ng-if="match.isResult">{{match.homeGoals}}:{{match.awayGoals}}</span>
                         <img class="future-match" ng-if="!match.isResult"
                              src="${pageContext.request.contextPath}/resources/images/common/ball.png">
                     </td>

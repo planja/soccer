@@ -1,6 +1,7 @@
 package infrastructure.service.news;
 
 import domain.entity.news.Blog;
+import domain.entity.news.News;
 import domain.entity.user.User;
 
 import java.util.List;
@@ -19,5 +20,9 @@ public interface INewsService {
     List<Blog> findBlogForReadMore(Long id);
 
     List<Blog> findAllBlogs();
+
+    News createNews(News news, User user);
+
+    News findNews(Long id);
 
 }

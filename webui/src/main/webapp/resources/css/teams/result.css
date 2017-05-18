@@ -61,15 +61,8 @@ td {
 
 }
 
-.result a {
+.result span {
     color: #029600;
-    text-decoration: underline;
-    cursor: hand;
-}
-
-.result a:hover {
-    color: #029600;
-    cursor: hand;
 }
 
 .right {
