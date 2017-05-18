@@ -1,7 +1,7 @@
 /**
  * Created by Никита on 13.05.2017.
  */
-soccerApp.controller("allBlogsController",
+readNewsApp.controller("allBlogsController",
     function AllBlogsControlle($scope, $http) {
         $scope.blogs = [];
 

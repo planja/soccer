@@ -8,11 +8,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html ng-app="soccerApp" ng-controller="allBlogsController">
+<html ng-app="readNewsApp" ng-controller="allBlogsController">
 <head>
     <title>Статьи</title>
     <link rel="stylesheet" href="<c:url value="/resources/css/news/allblogs.css" />">
-    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-combined.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/news/pagination.css" />">
 </head>
 <body>
 <t:header>
