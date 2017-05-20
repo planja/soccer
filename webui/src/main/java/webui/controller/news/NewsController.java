@@ -118,5 +118,12 @@ public class NewsController {
         return new NewsViewModel(newsService.findNews(id));
     }
 
+    @RequestMapping(value = "/latestnews", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<NewsViewModel> latestNews() {
+        return newsService.findLatestNews().stream().map(NewsViewModel::new).collect(Collectors.toList());
+    }
+
 
 }

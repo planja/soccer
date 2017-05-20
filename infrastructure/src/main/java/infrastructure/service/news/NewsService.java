@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -75,5 +76,20 @@ public class NewsService implements INewsService {
     @Override
     public News findNews(Long id) {
         return newsRepository.findOne(id);
+    }
+
+    @Override
+    public List<News> findLatestNews() {
+        List<News> news = newsRepository.findAll();
+        List<News> mainNews = news.stream().filter(News::getMainNews).collect(Collectors.toList());
+        List<News> otherNews = news.stream().filter(o -> !o.getMainNews()).collect(Collectors.toList());
+        Collections.reverse(mainNews);
+        Collections.reverse(otherNews);
+        int mainNewsSize = mainNews.size();
+        mainNews = mainNewsSize >= 4 ? mainNews.subList(0, 4) : mainNews.subList(0, mainNewsSize);
+        int otherNewsSize = otherNews.size();
+        otherNews = otherNewsSize >= 20 ? otherNews.subList(0, 20) : otherNews.subList(0, otherNewsSize);
+        mainNews.addAll(otherNews);
+        return mainNews;
     }
 }

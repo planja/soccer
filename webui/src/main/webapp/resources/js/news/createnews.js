@@ -14,10 +14,6 @@ function validate(newsData, html) {
         notify('topCenter', 'error', 'Длина названия новости должна быть не менее 5 символов');
         return false;
     }
-    if (!newsData.startNewsText || newsData.startNewsText.length < 5) {
-        notify('topCenter', 'error', 'Длина заглавия новости должна быть не менее 5 символов');
-        return false;
-    }
     if (html.length <= 11) {
         notify('topCenter', 'error', 'Введите содержание новости');
         return false;
@@ -56,7 +52,6 @@ soccerApp.controller("newsController",
                     name: newsData.name,
                     html: resultHtml,
                     mainCompetitionId: $scope.selectedCompetition.id,
-                    startNewsText: newsData.startNewsText,
                     mainNews: isMainNews.indexOf("ng-not-empty") != -1
                 };
                 $http.post("/news/savenews", data)

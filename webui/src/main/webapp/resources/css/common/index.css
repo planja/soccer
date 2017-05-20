@@ -1,0 +1,16 @@
+select {
+    height: 35px;
+    width: 280px;
+    border-color: green;
+    background: #f6f6f6 url(/resources/images/common/bg_sel.png) no-repeat scroll right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    padding-left: 15px;
+    margin: 20px 11px 20px 11px;
+}
+
+#change-matches-and-table{
+    margin: 20px 11px 20px 11px;
+}

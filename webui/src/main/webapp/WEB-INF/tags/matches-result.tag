@@ -11,7 +11,7 @@
     <div class="title">
         <span><span class="block-title-icon"></span>Футбольные матчи</span>
     </div>
-    <select ng-change="changeTeams(selectedCompetition)" ng-model="selectedCompetition" ng-options="item.fullName + item.region for item in competitions">
+    <select id="change-matches-and-table" ng-change="changeTeams(selectedCompetition)" ng-model="selectedCompetition" ng-options="item.fullName + item.region for item in competitions">
     </select>
     <div id="match-detail">
         <div class="hover" ng-repeat="future in futureMatches">

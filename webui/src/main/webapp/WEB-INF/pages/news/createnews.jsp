@@ -39,14 +39,10 @@
             <input placeholder="Название новости" ng-model="newsData.name" id="name" name="name"
                    maxlength="240">
         </div>
-        <div class="news-header">
-            <textarea ng-model="newsData.startNewsText" placeholder="Начало новости" maxlength="250"></textarea>
-        </div>
         <div class="is-main-news">
             <input ng-model="newsData.isMainNews" type="checkbox" class="radio" id="radio" />
             <label for="radio">Главная новость?</label>
         </div>
-        <br>
         <h1>Содержание новости</h1>
         <br><br>
         <div id="edit"></div>

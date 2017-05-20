@@ -437,18 +437,58 @@ body {
     padding-left: 17px;
 }
 
-select {
-    height: 35px;
-    width: 280px;
-    border-color: green;
-    background: #f6f6f6 url(/resources/images/common/bg_sel.png) no-repeat scroll right center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-    padding-left: 15px;
-    margin: 20px 11px 20px 11px;
+.news {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
 }
+
+.coomon-time{
+    margin-left: 30px;
+}
+
+.coomon-time div.l {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -150px 0;
+    float: left;
+    height: 19px;
+    width: 6px;
+}
+.coomon-time div.m {
+    text-align: center;
+    background: #FF9E23;
+    color: #fff !important;
+    font: 12px/20px Arial;
+    height: 19px;
+    float: left;
+    width: 151px;
+}
+
+.coomon-time div.r {
+    background: url(/resources/images/common/background1.png) no-repeat scroll -159px 0;
+    float: left;
+    height: 19px;
+    width: 6px;
+}
+
+.news a {
+    color: #000;
+    font: 12px/18px Arial;
+    text-decoration: none;
+    cursor: hand;
+}
+
+.news a:hover {
+    text-decoration: underline;
+    cursor: hand;
+}
+
+.news-border{
+    border-bottom: 1px solid #e6e6e6;
+
+}
+
 
 
 

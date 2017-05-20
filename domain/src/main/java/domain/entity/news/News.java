@@ -30,9 +30,6 @@ public class News {
     @Column(name = "main_competition_id")
     private Integer mainCompetitionId;
 
-    @Column(name = "start_news_text")
-    private String startNewsText;
-
     @Column(name = "date", columnDefinition = "DATETIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
@@ -81,14 +78,6 @@ public class News {
 
     public void setMainCompetitionId(Integer mainCompetitionId) {
         this.mainCompetitionId = mainCompetitionId;
-    }
-
-    public String getStartNewsText() {
-        return startNewsText;
-    }
-
-    public void setStartNewsText(String startNewsText) {
-        this.startNewsText = startNewsText;
     }
 
     public Date getDate() {

@@ -77,12 +77,14 @@
     text-align: justify;
     float: left;
     margin: 0 15px 0 25px;
+    width: 163px;
 }
 
 .img-with-text img {
     display: block;
     margin: 0 auto;
     width: 163px;
+    height: 105px;
 }
 .read-more-header {
     word-wrap:break-word;

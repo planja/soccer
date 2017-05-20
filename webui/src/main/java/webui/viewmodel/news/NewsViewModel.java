@@ -17,8 +17,6 @@ public class NewsViewModel {
 
     private Integer mainCompetitionId;
 
-    private String startNewsText;
-
     private Date date;
 
     private String authorName;
@@ -34,7 +32,6 @@ public class NewsViewModel {
         news.setName(this.name);
         news.setHtml(this.html);
         news.setMainCompetitionId(this.mainCompetitionId);
-        news.setStartNewsText(this.startNewsText);
         news.setMainNews(this.mainNews);
         return news;
     }
@@ -44,7 +41,6 @@ public class NewsViewModel {
         this.name = news.getName();
         this.html = news.getHtml();
         this.mainCompetitionId = news.getMainCompetitionId();
-        this.startNewsText = news.getStartNewsText();
         this.date = news.getDate();
         this.authorName = news.getUser() != null ? news.getUser().getName() : "Неизвестен";
         this.mainNews = news.getMainNews();
@@ -80,14 +76,6 @@ public class NewsViewModel {
 
     public void setMainCompetitionId(Integer mainCompetitionId) {
         this.mainCompetitionId = mainCompetitionId;
-    }
-
-    public String getStartNewsText() {
-        return startNewsText;
-    }
-
-    public void setStartNewsText(String startNewsText) {
-        this.startNewsText = startNewsText;
     }
 
     public Date getDate() {

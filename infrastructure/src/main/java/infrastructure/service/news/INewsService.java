@@ -25,4 +25,6 @@ public interface INewsService {
 
     News findNews(Long id);
 
+    List<News> findLatestNews();
+
 }
