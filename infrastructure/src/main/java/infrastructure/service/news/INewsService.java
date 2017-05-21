@@ -1,7 +1,9 @@
 package infrastructure.service.news;
 
 import domain.entity.news.Blog;
+import domain.entity.news.BlogCommentary;
 import domain.entity.news.News;
+import domain.entity.news.NewsCommentary;
 import domain.entity.user.User;
 
 import java.util.List;
@@ -28,5 +30,13 @@ public interface INewsService {
     List<News> findLatestNews();
 
     List<News> findAllNews();
+
+    void deleteNewsCommentary(Long id);
+
+    NewsCommentary addNewsComment(NewsCommentary newsCommentary,User user,News news);
+
+    void deleteBlogCommentary(Long id);
+
+    BlogCommentary addBlogComment(BlogCommentary blogCommentary, User user, Blog blog);
 
 }

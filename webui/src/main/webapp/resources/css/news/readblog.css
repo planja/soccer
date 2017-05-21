@@ -3,7 +3,6 @@
     float: left;
     width: 825px;
     background-color: #ffffff;
-    min-height: 480px;
 }
 
 .center-content h1 {
@@ -98,4 +97,93 @@
     text-decoration: underline;
     cursor: hand;
 }
+
+
+.comment-area{
+    width: 100%;
+    height: 260px;
+    background-color: #f6f6f6;
+    clear: left;
+    float: left;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.text-area{
+    width: 89%;
+    margin: 0 0 15px 40px;
+    height: 125px;
+}
+
+.comment-label{
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.add-comment{
+    margin-right: 40px;
+    text-align: center;
+    float: right;
+    background: url(/resources/images/common/background1.png) no-repeat scroll 0 -318px;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    font: bold 14px/26px Arial;
+    height: 31px;
+    padding: 0 0 2px;
+    width: 145px;
+}
+
+.comments{
+    float: left;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.comment{
+    padding: 20px 20px 20px 0;
+    border-top: 1px solid #e6e6e6;
+    height: 130px;
+}
+
+.user-name{
+    margin-left: 20px;
+    float: left;
+    color: #66b359;
+}
+
+.comment-date {
+    background: transparent url(/resources/images/common/bg_crt.png) no-repeat scroll 0 0;
+    color: #5e5e5e;
+    font: 12px/18px Arial;
+    padding: 0 0 0 20px;
+    float: right;
+}
+
+.user-comment-image{
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #029600;
+    width: 100px;
+    height: 89px;
+}
+
+.comment-text{
+    display: block;
+    margin-top: 25px;
+    margin-left: 119px;
+}
+
+.delete-image{
+    height: 22px;
+    width: 22px;
+    float: right;
+}
+
+.delete-comment{
+    cursor: hand;
+}
+
 

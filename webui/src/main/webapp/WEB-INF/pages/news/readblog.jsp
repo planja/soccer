@@ -56,6 +56,37 @@
 
             </div>
         </div>
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <div class="content">
+                <div class="comment-area">
+                    <label class="comment-label" for="comment">Комментарий</label>
+                    <textarea ng-model="commentText" id="comment" class="text-area"></textarea>
+                    <input value="Добавить" class="add-comment" ng-click="saveComment(commentText)">
+                </div>
+            </div>
+        </c:if>
+        <c:if test="${pageContext.request.userPrincipal.name == null}">
+            <div class="content">
+                <span><a href="${pageContext.request.contextPath}/login">Войдите</a>
+                    или <a href="${pageContext.request.contextPath}/registration">зарегистрируйтесь,</a> чтобы оставлять комментарии</span>
+            </div>
+        </c:if>
+        <div class="content">
+            <div class="comments">
+                <div ng-repeat="com in comments" class="comment">
+                    <img class="user-comment-image" src="{{com.userImage}}">
+                    <span class="user-name">{{com.userName}}</span>
+                    <span class="comment-date">{{com.date}}</span>
+                    <span class="comment-text">{{com.text}}</span>
+                    <c:if test="${pageContext.request.userPrincipal.name != null}">
+                        <c:if test="${pageContext.request.isUserInRole('ADMIN')
+                        ||pageContext.request.isUserInRole('MODERATOR')}">
+                            <a class="delete-comment" ng-click="deleteComment(com.id)"><img class="delete-image" src="/resources/images/common/274c.png"></a>
+                        </c:if>
+                    </c:if>
+                </div>
+            </div>
+        </div>
     </div>
 
 

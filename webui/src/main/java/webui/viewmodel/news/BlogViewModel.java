@@ -3,7 +3,11 @@ package webui.viewmodel.news;
 import domain.entity.news.Blog;
 import org.apache.commons.codec.binary.Base64;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
@@ -25,6 +29,8 @@ public class BlogViewModel {
     private Date date;
 
     private String authorName;
+
+    private List<CommentaryViewModel> comments;
 
     public BlogViewModel() {
     }
@@ -49,6 +55,11 @@ public class BlogViewModel {
         this.startNewsText = blog.getStartNewsText();
         this.date = blog.getDate();
         this.authorName = blog.getUser() != null ? blog.getUser().getName() : "Неизвестен";
+        this.comments = blog.getComments().stream()
+                .map(o -> new CommentaryViewModel(o.getId(), o.getUser().getName(), o.getText()
+                        , o.getUser().getImage() == null ? null : new Base64().encodeAsString(o.getUser().getImage()), blog.getId(), o.getDate())).collect(Collectors.toList());
+        this.comments.sort(Comparator.comparing(CommentaryViewModel::getDate));
+        Collections.reverse(this.comments);
     }
 
     public Long getId() {
@@ -113,5 +124,13 @@ public class BlogViewModel {
 
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
+    }
+
+    public List<CommentaryViewModel> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentaryViewModel> comments) {
+        this.comments = comments;
     }
 }

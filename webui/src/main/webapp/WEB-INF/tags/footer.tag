@@ -23,14 +23,22 @@
             <li>
                 <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
             </li>
+
             <li>
-                <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
+                <a href="${pageContext.request.contextPath}/teams" title="Команды">Команды</a>
+            </li>
+
+            <li>
+                <a href="${pageContext.request.contextPath}/teams/result" title="Результаты">Результаты</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
+                <a href="${pageContext.request.contextPath}/teams/table" title="Турнирная таблица">Турнирная таблица</a>
             </li>
-            <li class="last">
-                <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
+            <li>
+                <a href="${pageContext.request.contextPath}/news/allblogs" title="Статьи">Статьи</a>
+            </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/news/allnews" title="Статьи">Новости</a>
             </li>
         </ul>
     </div>

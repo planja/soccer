@@ -25,8 +25,7 @@
     <h1>${pageContext.request.userPrincipal.name}</h1>
     <div class="header">
         <div class="menu">
-            <a ng-click="showProfile()">Профиль</a> |
-            <a ng-click="showComments()">Комментарии</a>
+            <a ng-click="showProfile()">Профиль</a>
         </div>
     </div>
 

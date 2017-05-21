@@ -4,6 +4,8 @@ import domain.entity.user.User;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by ShchykalauM on 10.05.2017.
@@ -41,6 +43,9 @@ public class Blog {
     @Column(name = "date", columnDefinition = "DATETIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
+
+    @OneToMany(mappedBy = "blog", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private Set<BlogCommentary> comments = new HashSet<>();
 
     public Blog() {
     }
@@ -107,5 +112,13 @@ public class Blog {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Set<BlogCommentary> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<BlogCommentary> comments) {
+        this.comments = comments;
     }
 }

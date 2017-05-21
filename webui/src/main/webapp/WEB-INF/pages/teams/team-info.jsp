@@ -41,13 +41,13 @@
                 <td height="40" ng-if="player.index%2==0">{{player.number}}</td>
                 <td ng-if="player.index%2==0" class="player">{{player.name}}</td>
                 <td ng-if="player.index%2==0">{{player.shortName}}</td>
-                <td ng-if="player.index%2==0">{{player.position}}</td>
+                <td ng-if="player.index%2==0">{{getPosition(player.position)}}</td>
 
 
                 <td height="40" ng-if="player.index%2==1" class="color">{{player.number}}</td>
                 <td ng-if="player.index%2==1" class="color player">{{player.name}}</td>
                 <td ng-if="player.index%2==1" class="color">{{player.shortName}}</td>
-                <td ng-if="player.index%2==1" class="color">{{player.position}}</td>
+                <td ng-if="player.index%2==1" class="color">{{getPosition(player.position)}}</td>
             </tr>
         </table>
     </div>

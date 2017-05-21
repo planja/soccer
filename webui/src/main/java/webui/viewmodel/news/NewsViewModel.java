@@ -1,8 +1,10 @@
 package webui.viewmodel.news;
 
 import domain.entity.news.News;
+import org.apache.commons.codec.binary.Base64;
 
-import java.util.Date;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by ShchykalauM on 18.05.2017.
@@ -22,6 +24,8 @@ public class NewsViewModel {
     private String authorName;
 
     private boolean mainNews;
+
+    private List<CommentaryViewModel> comments;
 
     public NewsViewModel() {
     }
@@ -44,6 +48,11 @@ public class NewsViewModel {
         this.date = news.getDate();
         this.authorName = news.getUser() != null ? news.getUser().getName() : "Неизвестен";
         this.mainNews = news.getMainNews();
+        this.comments = news.getComments().stream()
+                .map(o -> new CommentaryViewModel(o.getId(), o.getUser().getName(), o.getText()
+                        , o.getUser().getImage() == null ? null : new Base64().encodeAsString(o.getUser().getImage()), news.getId(), o.getDate())).collect(Collectors.toList());
+        this.comments.sort(Comparator.comparing(CommentaryViewModel::getDate));
+        Collections.reverse(this.comments);
     }
 
     public Long getId() {
@@ -101,4 +110,14 @@ public class NewsViewModel {
     public void setMainNews(boolean mainNews) {
         this.mainNews = mainNews;
     }
+
+    public List<CommentaryViewModel> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentaryViewModel> comments) {
+        this.comments = comments;
+    }
+
+
 }

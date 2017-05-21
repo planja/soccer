@@ -4,6 +4,8 @@ import domain.entity.user.User;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by ShchykalauM on 18.05.2017.
@@ -36,6 +38,9 @@ public class News {
 
     @Column(name = "is_main_news")
     private Boolean isMainNews;
+
+    @OneToMany(mappedBy = "news", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private Set<NewsCommentary> comments = new HashSet<>();
 
     public News() {
     }
@@ -94,5 +99,13 @@ public class News {
 
     public void setMainNews(Boolean mainNews) {
         isMainNews = mainNews;
+    }
+
+    public Set<NewsCommentary> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<NewsCommentary> comments) {
+        this.comments = comments;
     }
 }

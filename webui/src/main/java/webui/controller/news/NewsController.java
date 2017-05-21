@@ -5,10 +5,13 @@ import domain.entity.news.News;
 import infrastructure.service.news.INewsService;
 import infrastructure.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import webui.viewmodel.news.BlogViewModel;
+import webui.viewmodel.news.CommentaryViewModel;
 import webui.viewmodel.news.NewsViewModel;
 
 import java.security.Principal;
@@ -139,6 +142,39 @@ public class NewsController {
         return newsService.findAllNews().stream().map(NewsViewModel::new).collect(Collectors.toList());
     }
 
+
+    /***************************************Comments***********************/
+
+    @RequestMapping(value = "/deletenewscommentary/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Void> deleteNewsCommentary(@PathVariable Long id) {
+        newsService.deleteNewsCommentary(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/savenewscomment", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    CommentaryViewModel saveNewsComment(@RequestBody CommentaryViewModel commentaryViewModel, Principal principal) {
+        return new CommentaryViewModel(newsService.addNewsComment(commentaryViewModel.toNewsCommentary()
+                , userService.findByLogin(principal.getName()), newsService.findNews(commentaryViewModel.getNewsId())));
+
+    }
+
+
+    @RequestMapping(value = "/deleteblogcommentary/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Void> deleteBlogCommentary(@PathVariable Long id) {
+        newsService.deleteBlogCommentary(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/saveblogcomment", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    CommentaryViewModel saveBlogComment(@RequestBody CommentaryViewModel commentaryViewModel, Principal principal) {
+        return new CommentaryViewModel(newsService.addBlogComment(commentaryViewModel.toBlogCommentary()
+                , userService.findByLogin(principal.getName()), newsService.findBlog(commentaryViewModel.getNewsId())));
+
+    }
 
 
 }

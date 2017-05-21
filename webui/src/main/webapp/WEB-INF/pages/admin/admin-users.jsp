@@ -29,8 +29,8 @@
 <div id="user-details" class="center-content">
     <div class="header" style="margin: 20px auto 0 auto">
         <div class="menu">
-            <a id="admin-users" href="${pageContext.request.contextPath}/admin/adminusers">Пользователи</a> |
-            <a ng-click="showComments()">Комментарии</a>
+            <a href="${pageContext.request.contextPath}/admin/adminusers">Пользователи</a> |
+            <a href="${pageContext.request.contextPath}/admin/admindata">Данные</a>
         </div>
     </div>
 

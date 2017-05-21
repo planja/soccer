@@ -1,15 +1,20 @@
 package infrastructure.service.news;
 
 import domain.entity.news.Blog;
+import domain.entity.news.BlogCommentary;
 import domain.entity.news.News;
+import domain.entity.news.NewsCommentary;
 import domain.entity.user.User;
+import infrastructure.repository.news.BlogCommentaryRepository;
 import infrastructure.repository.news.BlogRepository;
+import infrastructure.repository.news.NewsCommentaryRepository;
 import infrastructure.repository.news.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.Date;
@@ -27,10 +32,18 @@ public class NewsService implements INewsService {
 
     private final NewsRepository newsRepository;
 
+    private final NewsCommentaryRepository newsCommentaryRepository;
+
+    private final BlogCommentaryRepository blogCommentaryRepository;
+
     @Autowired
-    public NewsService(BlogRepository blogRepository, NewsRepository newsRepository) {
+    public NewsService(BlogRepository blogRepository, NewsRepository newsRepository,
+                       NewsCommentaryRepository newsCommentaryRepository,
+                       BlogCommentaryRepository blogCommentaryRepository) {
         this.blogRepository = blogRepository;
         this.newsRepository = newsRepository;
+        this.newsCommentaryRepository = newsCommentaryRepository;
+        this.blogCommentaryRepository = blogCommentaryRepository;
     }
 
     public Blog createBlog(Blog blog, User user) {
@@ -100,5 +113,33 @@ public class NewsService implements INewsService {
         List<News> news = newsRepository.findAll();
         Collections.reverse(news);
         return news;
+    }
+
+
+    @Override
+    @Transactional
+    public void deleteNewsCommentary(Long id) {
+        newsCommentaryRepository.deleteNewsCommentary(id);
+
+    }
+
+    @Override
+    public NewsCommentary addNewsComment(NewsCommentary newsCommentary, User user, News news) {
+        newsCommentary.setUser(user);
+        newsCommentary.setNews(news);
+        return newsCommentaryRepository.save(newsCommentary);
+    }
+
+    @Override
+    @Transactional
+    public void deleteBlogCommentary(Long id) {
+        blogCommentaryRepository.deleteBlogCommentary(id);
+    }
+
+    @Override
+    public BlogCommentary addBlogComment(BlogCommentary blogCommentary, User user, Blog blog) {
+        blogCommentary.setUser(user);
+        blogCommentary.setBlog(blog);
+        return blogCommentaryRepository.save(blogCommentary);
     }
 }

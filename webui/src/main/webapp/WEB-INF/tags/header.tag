@@ -82,9 +82,20 @@
     </div>
     <div id="menu">
         <ul>
-            <li class="first">
-                <a href="${pageContext.request.contextPath}/teams" title="Главная">Команды</a>
-            </li>
+            <c:if test="${!pageContext.request.isUserInRole('ADMIN')}">
+                <li class="first">
+                    <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/teams" title="Команды">Команды</a>
+                </li>
+            </c:if>
+            <c:if test="${pageContext.request.isUserInRole('ADMIN')}">
+                <li class="first">
+                    <a href="${pageContext.request.contextPath}/teams" title="Команды">Команды</a>
+                </li>
+            </c:if>
+
             <li>
                 <a href="${pageContext.request.contextPath}/teams/result" title="Результаты">Результаты</a>
             </li>

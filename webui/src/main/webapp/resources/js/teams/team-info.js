@@ -15,14 +15,25 @@ soccerApp.controller("teamInfoController",
         };
         $http.post("/getapidata", requestParams)
             .then(function (data) {
-                if(data.data===""){
-                    window.location.href="/notfound";
+                if (data.data === "") {
+                    window.location.href = "/notfound";
                 }
                 $scope.teamData = JSON.parse(data.data);
                 $scope.players = $scope.teamData.players;
                 $.each($scope.players, function (index, value) {
-                    value.index=index;
+                    value.index = index;
                 })
-            })
+            });
+
+        $scope.getPosition = function (pos) {
+            if (pos == "GK")
+                return "Вратарь";
+            else if (pos == "DF")
+                return " Защитник";
+            else if (pos == "MF")
+                return "Полузащитник";
+            else if (pos == "FW")
+                return "Нападающий";
+        }
 
     });

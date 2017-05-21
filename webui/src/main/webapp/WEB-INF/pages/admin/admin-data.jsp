@@ -31,7 +31,7 @@
     <div class="header" style="margin: 20px auto 0 auto">
         <div class="menu">
             <a href="${pageContext.request.contextPath}/admin/adminusers">Пользователи</a> |
-            <a id="admin-data" href="${pageContext.request.contextPath}/admin/admindata">Данные</a> |
+            <a id="admin-data" href="${pageContext.request.contextPath}/admin/admindata">Данные</a>
         </div>
     </div>
 

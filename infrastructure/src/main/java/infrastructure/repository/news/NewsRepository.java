@@ -7,5 +7,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Created by ShchykalauM on 18.05.2017.
  */
 public interface NewsRepository extends JpaRepository<News, Long> {
-
 }
