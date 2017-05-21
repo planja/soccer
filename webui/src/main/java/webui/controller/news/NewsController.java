@@ -126,4 +126,19 @@ public class NewsController {
     }
 
 
+    @RequestMapping(value = "/allnews", method = RequestMethod.GET)
+    public String allNews() {
+        return "news/allnews";
+    }
+
+
+    @RequestMapping(value = "/findallnews", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<NewsViewModel> findAllNews() {
+        return newsService.findAllNews().stream().map(NewsViewModel::new).collect(Collectors.toList());
+    }
+
+
+
 }

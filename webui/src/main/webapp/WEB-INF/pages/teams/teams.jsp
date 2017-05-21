@@ -18,8 +18,10 @@
 <t:header>
 </t:header>
 
-<t:news>
-</t:news>
+<div ng-controller="topAndBottomController">
+    <t:news>
+    </t:news>
+</div>
 
 <div class="center-content" ng-controller="teamsController">
     <h1 id="selectedCompetition" style="display: none">Команды {{selectedCompetition.fullName}}
@@ -58,4 +60,6 @@
 
 </body>
 <script src="<c:url value="/resources/js/teams/teams.js" />"></script>
+<script src="<c:url value="/resources/js/common/top-and-bottom-news.js" />"></script>
+
 </html>

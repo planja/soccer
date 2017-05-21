@@ -17,8 +17,10 @@
 <t:header>
 </t:header>
 
-<t:news>
-</t:news>
+<div ng-controller="topAndBottomController">
+    <t:news>
+    </t:news>
+</div>
 <link rel="stylesheet" href="<c:url value="/resources/css/teams/team-info.css" />">
 
 <div class="center-content">
@@ -61,6 +63,7 @@
 <script src="<c:url value="/resources/js/teams/team-info.js" />">
 
 </script>
+<script src="<c:url value="/resources/js/common/top-and-bottom-news.js" />"></script>
 <script>
     var teamId = "${teamId}";
 </script>

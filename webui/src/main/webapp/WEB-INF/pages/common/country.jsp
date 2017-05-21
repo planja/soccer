@@ -8,16 +8,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html ng-app="soccerApp" ng-controller="countryController">
 <head>
     <link rel="stylesheet" href="<c:url value="/resources/css/common/index.css" />">
 </head>
 <body>
 <t:header>
-    <title>Футбол, новости российского, европейского и мирового футбола</title>
+    <title>{{title}}</title>
 </t:header>
 
-<div id="index" ng-app="soccerApp" ng-controller="indexController">
+<div id="index">
     <t:news>
     </t:news>
 
@@ -49,6 +49,9 @@
 
 
 </body>
-<script src="<c:url value="/resources/js/common/index.js" />"></script>
+<script src="<c:url value="/resources/js/common/country.js" />"></script>
+<script>
+    var countryId = ${countryId};
+</script>
 </html>
 

@@ -83,9 +83,6 @@
     <div id="menu">
         <ul>
             <li class="first">
-                <a href="${pageContext.request.contextPath}/" title="Главная">Главная</a>
-            </li>
-            <li>
                 <a href="${pageContext.request.contextPath}/teams" title="Главная">Команды</a>
             </li>
             <li>
@@ -96,6 +93,9 @@
             </li>
             <li>
                 <a href="${pageContext.request.contextPath}/news/allblogs" title="Статьи">Статьи</a>
+            </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/news/allnews" title="Статьи">Новости</a>
             </li>
             <c:if test="${pageContext.request.isUserInRole('BLOGGER')||pageContext.request.isUserInRole('ADMIN')}">
                 <li>

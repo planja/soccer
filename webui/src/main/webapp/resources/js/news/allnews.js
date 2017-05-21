@@ -1,8 +1,8 @@
 /**
  * Created by Никита on 13.05.2017.
  */
-readNewsApp.controller("allBlogsController",
-    function AllBlogsControlle($scope, $http) {
+readNewsApp.controller("allNewsController",
+    function AllNewsControlle($scope, $http) {
         $scope.blogs = [];
 
         $scope.competitions = [];
@@ -37,7 +37,7 @@ readNewsApp.controller("allBlogsController",
         };
 
         $scope.loadBlogs = function () {
-            $http.get("/news/findallblogs")
+            $http.get("/news/findallnews")
                 .then(function (data) {
                     $scope.filteredBlogs = data.data;
                     $scope.allBlogs = data.data;
@@ -54,7 +54,6 @@ readNewsApp.controller("allBlogsController",
                         var d = date.substring(0, date.indexOf('г') - 1);
                         var t = date.substring(date.indexOf('г') + 3, date.length);
                         value.date = d + t;
-                        value.image = "data:image/png;base64," + value.image;
                     });
 
                     $scope.numPages = function () {

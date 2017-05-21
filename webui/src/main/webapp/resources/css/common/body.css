@@ -383,6 +383,10 @@ body {
     background: url(/resources/images/common/icons.png) no-repeat scroll 0 -128px;
 }
 
+.menu-item a{
+    color: #333;
+}
+
 .article {
     border-bottom: 1px solid #e6e6e6;
     font: 12px/18px Arial;

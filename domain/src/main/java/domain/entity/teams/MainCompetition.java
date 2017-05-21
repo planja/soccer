@@ -12,7 +12,6 @@ public enum MainCompetition {
     SPAIN(4, "Испания"),
     ITALY(5, "Италия"),
     GERMANY(6, "Германия"),
-    UKRAINE(7, "Украина"),
     FRANCE(8, "Франция"),
     OTHER(9, "Другие");
 

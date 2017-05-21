@@ -15,6 +15,9 @@ soccerApp.controller("teamInfoController",
         };
         $http.post("/getapidata", requestParams)
             .then(function (data) {
+                if(data.data===""){
+                    window.location.href="/notfound";
+                }
                 $scope.teamData = JSON.parse(data.data);
                 $scope.players = $scope.teamData.players;
                 $.each($scope.players, function (index, value) {

@@ -18,8 +18,10 @@
     <title>Ошибка</title>
 </t:header>
 
-<t:news>
-</t:news>
+<div ng-app="soccerApp" ng-controller="topAndBottomController">
+    <t:news>
+    </t:news>
+</div>
 
 <div class="center-content">
     <h1>Ошибка</h1>
@@ -34,6 +36,8 @@
 </t:footer>
 
 </body>
+<script src="<c:url value="/resources/js/common/top-and-bottom-news.js" />"></script>
+
 </html>
 
 

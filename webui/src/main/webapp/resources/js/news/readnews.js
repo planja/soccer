@@ -39,4 +39,37 @@ soccerApp.controller("newsController",
 
         $scope.loadNews();
 
+        $scope.mainNews = [];
+        $scope.otherNews = [];
+
+        $scope.loadAllNews = function () {
+            $http.get("/news/latestnews")
+                .then(function (data) {
+                    var news = data.data;
+                    $.each(news, function (index, value) {
+                        var dateTime = new Date(value.date);
+                        var date = dateTime.toLocaleString('ru', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric'
+                        });
+                        var d = date.substring(0, date.indexOf('г') - 1);
+                        var t = date.substring(date.indexOf('г') + 3, date.length);
+                        value.date = d + t;
+                        if (value.mainNews && value.id!==parseInt(newsId)) {
+                            value.index=$scope.mainNews.length;
+                            $scope.mainNews.push(value)
+                        } else if(value.id!==parseInt(newsId)) {
+                            value.index=$scope.otherNews.length;
+                            $scope.otherNews.push(value)
+                        }
+                    });
+                    var q = 0;
+                })
+        };
+
+        $scope.loadAllNews();
+
     });

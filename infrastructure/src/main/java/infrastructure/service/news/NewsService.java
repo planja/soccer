@@ -62,7 +62,9 @@ public class NewsService implements INewsService {
 
     @Override
     public List<Blog> findAllBlogs() {
-        return blogRepository.findAll();
+        List<Blog> blogs = blogRepository.findAll();
+        Collections.reverse(blogs);
+        return blogs;
     }
 
 
@@ -91,5 +93,12 @@ public class NewsService implements INewsService {
         otherNews = otherNewsSize >= 20 ? otherNews.subList(0, 20) : otherNews.subList(0, otherNewsSize);
         mainNews.addAll(otherNews);
         return mainNews;
+    }
+
+    @Override
+    public List<News> findAllNews() {
+        List<News> news = newsRepository.findAll();
+        Collections.reverse(news);
+        return news;
     }
 }

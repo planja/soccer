@@ -32,9 +32,14 @@ function findInDataSourcePropertiesByValue(data, filter_property, values, return
 }
 
 $(document).ready(function () {
-    $('.menu > li').parent().find('ul').toggle();
+    if ($(".center-content").first().html().indexOf("Ошибка") !== -1){
+        $.each($(".news"),function (index, value) {
+            $(value).css("display","none")
+        })
+    }
+   /* $('.menu > li').parent().find('ul').toggle();
 
     $('.menu > li div').click(function () {
         $(this).parent().find('ul').toggle();
-    });
+    });*/
 });
