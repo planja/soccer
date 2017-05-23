@@ -18,7 +18,8 @@
                     <span class="icon russia"></span>
                     <span class="title">Россия</span>
 
-                </div></a>
+                </div>
+            </a>
             </div>
         </li>
         <li>
@@ -28,7 +29,8 @@
                         <span class="icon lc"></span>
                         <span class="title">Лига Чемпионав</span>
 
-                    </div> </a>
+                    </div>
+                </a>
                 </div>
             </div>
         </li>
@@ -40,7 +42,8 @@
                         <span class="title">Лига Европы</span>
 
 
-                    </div> </a>
+                    </div>
+                </a>
                 </div>
             </div>
         </li>
@@ -51,7 +54,8 @@
                     <span class="title">Англия</span>
 
 
-                </div>  </a>
+                </div>
+            </a>
             </div>
         </li>
         <li>
@@ -61,7 +65,8 @@
                     <span class="title">Испания</span>
 
 
-                </div>   </a>
+                </div>
+            </a>
             </div>
         </li>
         <li>
@@ -71,7 +76,8 @@
                     <span class="title">Италия</span>
 
 
-                </div></a>
+                </div>
+            </a>
             </div>
         </li>
         <li>
@@ -81,7 +87,8 @@
                     <span class="title">Германия</span>
 
 
-                </div> </a>
+                </div>
+            </a>
             </div>
         </li>
         <li>
@@ -91,7 +98,8 @@
                     <span class="title">Франция</span>
 
 
-                </div></a>
+                </div>
+            </a>
             </div>
         </li>
     </ul>

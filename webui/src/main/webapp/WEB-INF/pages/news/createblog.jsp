@@ -1,12 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: ShchykalauM
-  Date: 16.03.2017
-  Time: 13:58
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +11,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/froala/froala_editor.pkgd.min.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/froala/froala_style.min.css" />">
 </head>
-<body ng-app="soccerApp">
+<body ng-app="soccerApp" ng-controller="articleController">
 
 <t:header>
 </t:header>
@@ -26,7 +19,7 @@
 <t:news>
 </t:news>
 
-<div class="center-content" ng-controller="articleController">
+<div class="center-content">
     <h1>Новая статья</h1>
 
 
